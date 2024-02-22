@@ -40,8 +40,6 @@ SECRET_KEY = "django-insecure-*wh9%tw1u#vz#^lodg+)a*am^0fn=ctkt112!10nj=ti1y+et6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -95,7 +93,7 @@ DATABASES = {
           'options': f'-c search_path={getenv("DB_SCHEMA")}'
         },
         'NAME': 'sitedb',
-        'USER': 'felixdb',
+        'USER': 'fxdb',
         'PASSWORD': getenv('POSTGRES_DB_PASSWD'),
         'HOST': 'localhost',
     }
