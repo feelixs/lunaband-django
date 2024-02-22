@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/logos/luna-logo.webp">
+    <link rel="stylesheet" type="text/css" href="css/nav.css?v=1.1">
+    <link rel="stylesheet" type="text/css" href="css/flex-boxes.css">
+    <link rel="stylesheet" type="text/css" href="css/background.css?v=1.1">
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=1.2">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <script src="js/change-language.js?v=2.3"></script>
+    <script src="js/home.js?v=2.2"></script>
+    <title>Luna | Home</title>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+    <div class="nav-content">
+        <div class="logo">
+            <a href="/"><img alt="Trio Luna Logo" class="img-logo trans-17" src="images/logos/luna-logo.webp"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a id="home-nav" class="only-desktop" href="#">Home</a></li>
+            <li><a id="bios-nav" href="bios.html">About</a></li>
+            <li><a id="media-nav" href="gallery.html">Media</a></li>
+            <li><a id="patreon-nav" target="_blank" href="https://patreon.com">Patreon</a></li>
+            <li class="lang-chg trans-17"><button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button></li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div>
+        <!--
+            These images are background images defined in background.css
+            So their 'alts' are defined as 'aria-labels'
+        -->
+        <div class="b-img" id="img1" aria-label="Image of Carmen holding a flower">
+            <div class="text-overlay">
+                <div class="flex-container">
+                    <p id="name-splash" class="main-title">TRIO LUNA</p>
+                </div>
+            </div>
+        </div>
+        <div class="b-img" id="img2" aria-label="Image of Nicolas sitting with his harp">
+            <div class="text-overlay">
+                <div class="flex-container">
+                    <p class="main-subhead" id="div1-text">We are a group of musicians who are a part of a movement within Latin artists of popularizing Latin Folk music within the Americas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="b-img" id="img3" aria-label="Image of Marco standing with his guitar">
+            <div class="text-overlay">
+                <div class="trans-contained-box">
+                    <div class="flex-container">
+                        <p id="div2-text" class="main-subhead">Follow us on our musical journey</p>
+                    </div>
+                    <div class="flex-container" style="padding-top: 60px">
+                        <a target="_blank" href="https://instagram.com/tri0luna"><img alt="Instagram Logo" class="img-logo" src="images/logos/instagram-white.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="flex-container">
+        <div class="trans-contained-box" id="copyright">
+            Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank" href="https://felixcreations.com"><img alt="Felixcreations Logo" class="img-logo trans-30" src="images/logos/felix-logo-black.webp"></a>
+        </div>
+    </div>
+    <div class="flex-container" style="padding-bottom: 20px" id="footer-text">
+        If you have any questions or concerns, please contact Michael Felix through <a class="email-link" target="_blank" href="mailto:mikemh@uri.edu">mikemh@uri.edu</a>
+    </div>
+</footer>
+</body>
+</html>

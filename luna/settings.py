@@ -18,6 +18,9 @@ BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 
 STATIC_URL = '/static/'
 
+SITE_HOST = getenv("SITE_HOST")
+SITE_IP = getenv("MY_IP")
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

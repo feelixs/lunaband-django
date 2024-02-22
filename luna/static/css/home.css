@@ -1,0 +1,26 @@
+#div2-text {
+    transform: translateY(100%);
+}
+
+#name-splash {
+    transform: translateY(-10vw);
+}
+
+
+@media (max-width: 1200px) {
+    #div1-text {
+        font-size: 1.2em;
+    }
+
+    #div2-text {
+        font-size: 1.2em;
+        transform: translateY(4vw);
+    }
+
+    #name-splash {
+        transform: translateY(-10vw);
+        line-height: 1.2;
+    }
+
+
+}

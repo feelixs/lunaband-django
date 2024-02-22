@@ -1,0 +1,56 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #5d5d5d;
+    padding: 8px;
+    z-index: 1;
+}
+
+.nav-links button {
+    padding: 0;
+    background: none;
+    border: none;
+    color: inherit;
+    text-align: inherit;
+    font-size: inherit;
+    margin: 0;
+    cursor: pointer;
+}
+
+.nav-content {
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    color: #bdbdbd;
+}
+
+.lang-chg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding-right: 30px;
+    padding-top: 15px;
+}
+
+.lang-chg img {
+    height: 24px;
+}
+
+.lang-chg img:hover {
+    filter: opacity(50%);
+}

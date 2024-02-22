@@ -1,0 +1,103 @@
+/* Installed Fonts */
+@font-face { font-family: Delicious; src: url('../fonts/Rubik_Doodle_Shadow/RubikDoodleShadow-Regular.ttf'); }
+@font-face { font-family: Outfit; src: url('../fonts/Outfit/Outfit-VariableFont_wght.ttf');}
+
+
+html, body {
+    font-family: Outfit, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.main-title-text {
+    font-size: 2em;
+}
+
+.page-title-white {
+    color: white;
+    text-align: center;
+    padding: 50px 0 20px 0;
+    margin: 0 0 0 0;
+}
+
+.inner-div {
+    margin: 0 20px 0 20px;
+}
+
+.grey-bg {
+    background-color: #444444;
+}
+
+.black-bg {
+    background-color: #000000;
+}
+
+.rounded {
+    border-radius: 20px;
+}
+
+main, div {
+    margin: 0;
+    padding: 0;
+}
+
+.img-logo {
+    height: 40px;
+}
+
+.trans-30 {
+    transform: translateY(30%);
+}
+
+.trans-17 {
+    transform: translateY(17%);
+}
+
+.trans-neg24 {
+    transform: translateY(-24%);
+}
+
+.img-logo:hover {
+    filter: opacity(50%);
+}
+
+a.email-link {
+    padding-left: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+a.email-link:hover {
+    text-decoration: underline;
+    filter: opacity(50%);
+}
+
+.info-text {
+    color: white;
+    line-height: 40px;
+}
+
+.info-title {
+    color: white;
+    padding: 0 10vw 0 10vw;
+    font-size: 2em;
+    text-transform: capitalize;
+    text-decoration-line: underline;
+}
+
+.blank-space {
+    margin: 10vh;
+}
+
+footer {
+    background-color: #5d5d5d;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .only-desktop {
+        display: none;
+    }
+}

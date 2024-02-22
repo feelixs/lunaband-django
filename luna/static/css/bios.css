@@ -1,0 +1,26 @@
+.flex-container-bio {
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+    text-align: left;
+}
+
+@media (max-width: 1200px) {
+    .flex-container-bio {
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bio-img {
+        max-height: 400px;
+    }
+}
+
+.bio-img-container {
+    text-align: center;
+}
