@@ -92,10 +92,11 @@ DATABASES = {
         'OPTIONS': {
           'options': f'-c search_path={getenv("DB_SCHEMA")}'
         },
-        'NAME': 'sitedb',
+        'NAME': 'lunadb',
         'USER': 'fxdb',
         'PASSWORD': getenv('POSTGRES_DB_PASSWD'),
         'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
