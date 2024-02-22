@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from os import getenv, path
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 
@@ -37,13 +40,11 @@ STATIC_ROOT = path.join(BASE_DIR, 'static/')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-*wh9%tw1u#vz#^lodg+)a*am^0fn=ctkt112!10nj=ti1y+et6"
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 
 # Application definition
 
 INSTALLED_APPS = [
+    "luna",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -67,7 +68,7 @@ ROOT_URLCONF = "luna.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
