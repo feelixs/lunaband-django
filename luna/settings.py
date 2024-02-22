@@ -21,6 +21,8 @@ STATIC_URL = '/static/'
 SITE_HOST = getenv("SITE_HOST")
 SITE_IP = getenv("MY_IP")
 
+ALLOWED_HOSTS = [SITE_HOST, f"www.{SITE_HOST}", 'localhost', SITE_IP]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
