@@ -19,14 +19,14 @@
 <nav class="navbar" id="navbar">
     <div class="nav-content">
         <div class="logo">
-            <a href="/"><img alt="Trio Luna Logo" class="img-logo trans-17" src="images/logos/luna-logo.webp"></a>
+            <a href="/"><img alt="Trio Luna Logo" class="img-logo trans-17" src="{% static 'images/logos/luna-logo.webp' %}"></a>
         </div>
         <ul class="nav-links">
             <li><a id="home-nav" class="only-desktop" href="#">Home</a></li>
             <li><a id="bios-nav" href="bios.html">About</a></li>
             <li><a id="media-nav" href="gallery.html">Media</a></li>
             <li><a id="patreon-nav" target="_blank" href="https://patreon.com">Patreon</a></li>
-            <li class="lang-chg trans-17"><button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button></li>
+            <li class="lang-chg trans-17"><button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="{% static 'images/buttons/globe-white-es.webp' %}"></button></li>
         </ul>
     </div>
 </nav>
@@ -57,7 +57,7 @@
                         <p id="div2-text" class="main-subhead">Follow us on our musical journey</p>
                     </div>
                     <div class="flex-container" style="padding-top: 60px">
-                        <a target="_blank" href="https://instagram.com/tri0luna"><img alt="Instagram Logo" class="img-logo" src="images/logos/instagram-white.png"></a>
+                        <a target="_blank" href="https://instagram.com/tri0luna"><img alt="Instagram Logo" class="img-logo" src="{% static 'images/logos/instagram-white.png' %}"></a>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
 <footer>
     <div class="flex-container">
         <div class="trans-contained-box" id="copyright">
-            Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank" href="https://felixcreations.com"><img alt="Felixcreations Logo" class="img-logo trans-30" src="images/logos/felix-logo-black.webp"></a>
+            Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank" href="https://felixcreations.com"><img alt="Felixcreations Logo" class="img-logo trans-30" src="{% static 'images/logos/felix-logo-black.webp' %}"></a>
         </div>
     </div>
     <div class="flex-container" style="padding-bottom: 20px" id="footer-text">

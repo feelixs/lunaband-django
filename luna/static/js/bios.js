@@ -7,12 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
         Tutorial I used for running JS on page load:
         https://stackoverflow.com/a/25984032
     */
-    biosTextFields.push(new DualLangTextField(`/luna/text/bios/carmen`, document.getElementById('carmen-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/bios/marco`, document.getElementById('marco-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
-    biosTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
-    bioDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
+    biosTextFields.push(new DualLangTextField(`/static/text/bios/carmen`, document.getElementById('carmen-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/text/bios/marco`, document.getElementById('marco-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/text/bios/nicolas`, document.getElementById('nicolas-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/text/footer`, document.getElementById('footer-text')));
+    biosTextFields.push(new DualLangTextField( `/static/text/copyright`, document.getElementById('copyright')));
+    bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
+                                         'https://trioluna.com/static/images/buttons/globe-white-es.webp',
+                                                 document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
 })
 

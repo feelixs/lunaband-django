@@ -36,7 +36,7 @@ function DualLangTextField(baseDir, element) {
     this.getText = function(lang) {
         // method of retrieving file contents from server found at:
         // https://stackoverflow.com/a/14446538
-        fetch(`${this.baseDir}/${lang}`) // fetch file from the server
+        fetch(`https://trioluna.com${this.baseDir}/${lang}`) // fetch file from the server
             .then((res) => {
                 if (!res.ok) { // if response was not successful
                     // don't modify the innerhtml, and default to whatever is hard-coded into it

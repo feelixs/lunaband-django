@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
         Tutorial I used for running JS on page load:
         https://stackoverflow.com/a/25984032
     */
-    homeTextFields.push(new DualLangTextField(`/luna/text/home/div1`, document.getElementById('div1-text')));
-    homeTextFields.push(new DualLangTextField(`/luna/text/home/div2`, document.getElementById('div2-text')));
-    homeTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
-    homeTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
-    homeDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
+    homeTextFields.push(new DualLangTextField(`/static/text/home/div1`, document.getElementById('div1-text')));
+    homeTextFields.push(new DualLangTextField(`/static/text/home/div2`, document.getElementById('div2-text')));
+    homeTextFields.push(new DualLangTextField(`/static/text/footer`, document.getElementById('footer-text')));
+    homeTextFields.push(new DualLangTextField( `/static/text/copyright`, document.getElementById('copyright')));
+    homeDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
+                                           'https://trioluna.com/static/images/buttons/globe-white-es.webp',
+                                                   document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
 })
 
