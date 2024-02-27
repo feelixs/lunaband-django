@@ -6,3 +6,7 @@ import os
 
 async def index(request):
     return render(request, 'index.html')
+
+
+async def ajax_practice(req):
+    return render(req, 'ajax-practice.html')
