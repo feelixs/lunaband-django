@@ -1,7 +1,7 @@
 
 var btn = document.getElementById('ajaxbtn');
 
-btn.addEventListener('click'), makereq, false);
+btn.addEventListener(('click'), makereq, false);
 
 
 function makereq() {
