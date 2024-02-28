@@ -6,3 +6,7 @@ import os
 
 async def index(request):
     return render(request, 'index.html')
+
+
+async def lab5_index(request):
+    return render(request, "lab5-ajax/index.html")
