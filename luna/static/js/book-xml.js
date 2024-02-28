@@ -5,7 +5,7 @@ function allOpacity(val) {
 
 function loadXML(url, index) {
     var $details = $('#details');
-    $details.html('');
+    $details.innerHTML = '';
 
     var req = new XMLHttpRequest();
     req.onload = function() {
