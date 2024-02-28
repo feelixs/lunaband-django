@@ -7,8 +7,6 @@ function loadXML(url, index) {
     var $details = $('#details');
     $details.html('');
 
-    document.getElementById('details').innerHTML = '';
-
     var req = new XMLHttpRequest();
     req.onload = function() {
         if (req.status === 200) {
@@ -33,4 +31,19 @@ $don.on('click', function() {
     loadXML('http://trioluna.com/static/data/book-data.xml', 0);
     allOpacity(0.5);
     $don.css('opacity', 1);
+});
+
+var $tale = $('#two-cities-img');
+$don.on('click', function() {
+    loadXML('http://trioluna.com/static/data/book-data.xml', 1);
+    allOpacity(0.5);
+    $tale.css('opacity', 1);
+});
+
+
+var $lord = $('#lotr-img');
+$don.on('click', function() {
+    loadXML('http://trioluna.com/static/data/book-data.xml', 2);
+    allOpacity(0.5);
+    $lord.css('opacity', 1);
 });
