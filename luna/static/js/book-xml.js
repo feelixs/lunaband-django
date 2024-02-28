@@ -13,9 +13,9 @@ function loadXML(url, index) {
             let response = req.responseXML;
             let books = response.getElementsByTagName('book');
             let myBook = books[index];
-            let newTitle = $('<h3></h3>').html(`<b>Title: </b>${myBook.getElementsByTagName('title')[0]}`);
-            let p1 = $('<p></p>').html(`<b>Author: </b>${myBook.getElementsByTagName('author')[0]}`);
-            let p2 = $('<p></p>').html(`<b>Sold: </b>${myBook.getElementsByTagName('sold')[0]}`);
+            let newTitle = $('<h3></h3>').html(`<b>Title: </b>${myBook.getElementsByTagName('title')[0].textContent}`);
+            let p1 = $('<p></p>').html(`<b>Author: </b>${myBook.getElementsByTagName('author')[0].textContent}`);
+            let p2 = $('<p></p>').html(`<b>Sold: </b>${myBook.getElementsByTagName('sold')[0].textContent}`);
             let p3 = $('<p></p>').html(myBook.getElementsByTagName('description')[0]);
             $details.append(newTitle).append(p1).append(p2).append(p3);
         }
