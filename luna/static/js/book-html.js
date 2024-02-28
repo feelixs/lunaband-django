@@ -21,3 +21,11 @@ $don.on('click', function() {
     allOpacity(0.5);
     $don.css('opacity', 1);
 });
+
+var $tale = $('#two-cities-img');
+$tale.on('click', function() {
+    loadHTML('https://trioluna.com/static/data/dickens-data.html');
+    allOpacity(0.5);
+    $tale.css('opacity', 1);
+});
+
