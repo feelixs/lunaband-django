@@ -20,11 +20,11 @@ function loadXML(url, index) {
     req.send(null);
 }
 
-loadXML('http://trioluna.com/static/data/cervantes-data.xml', 0);
+loadXML('http://trioluna.com/static/data/book-data.xml', 0);
 
 var $don = $('#don-quixote-img');
 $don.on('click', function() {
-    loadXML('http://trioluna.com/static/data/cervantes-data.xml', 0);
+    loadXML('http://trioluna.com/static/data/book-data.xml', 0);
     allOpacity(0.5);
     $don.css('opacity', 1);
 });
