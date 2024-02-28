@@ -14,25 +14,25 @@ function loadHTML(url) {
     req.send(null);
 }
 
-loadHTML('https://trioluna.com/static/data/cervantes-data.html');
+loadHTML('http://trioluna.com/static/data/cervantes-data.html');
 
 var $don = $('#don-quixote-img');
 $don.on('click', function() {
-    loadHTML('https://trioluna.com/static/data/cervantes-data.html');
+    loadHTML('http://trioluna.com/static/data/cervantes-data.html');
     allOpacity(0.5);
     $don.css('opacity', 1);
 });
 
 var $tale = $('#two-cities-img');
 $tale.on('click', function() {
-    loadHTML('https://trioluna.com/static/data/dickens-data.html');
+    loadHTML('http://trioluna.com/static/data/dickens-data.html');
     allOpacity(0.5);
     $tale.css('opacity', 1);
 });
 
 var $lord = $('#lotr-img');
 $lord.on('click', function() {
-    loadHTML('https://trioluna.com/static/data/tolkien-data.html');
+    loadHTML('http://trioluna.com/static/data/tolkien-data.html');
     allOpacity(0.5);
     $lord.css('opacity', 1);
 });
