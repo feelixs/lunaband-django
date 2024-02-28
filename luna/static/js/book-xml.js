@@ -7,6 +7,8 @@ function loadXML(url, index) {
     var $details = $('#details');
     $details.html('');
 
+    document.getElementById('details').innerHTML = '';
+
     var req = new XMLHttpRequest();
     req.onload = function() {
         if (req.status === 200) {
