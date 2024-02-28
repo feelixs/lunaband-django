@@ -28,7 +28,7 @@ function allOpacity(val) {
 
 function loadJSON(url, index) {
     var $details = $('#details');
-    $details.html('');
+    $details.empty();
 
     var req = new XMLHttpRequest();
     req.onload = function() {
