@@ -37,7 +37,7 @@ function loadJSON(url, index) {
             let myBook = jsonData.books[index];
             let newTitle = $('<h3></h3>').html(`<b>Title: </b>${myBook.title}`);
             let p1 = $('<p></p>').html(`<b>Author: </b>${myBook.author}`);
-            let p2 = $('<p></p>').html(`<b>Sold: </b>${myBook.sold}`);
+            let p2 = $('<p></p>').html(`<b>Sold: </b>${myBook.sold} million`);
             let p3 = $('<p></p>').html(myBook.description);
             $details.append(newTitle).append(p1).append(p2).append(p3);
         }
