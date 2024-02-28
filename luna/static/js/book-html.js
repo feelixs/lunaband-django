@@ -14,6 +14,8 @@ function loadHTML(url) {
     req.send(null);
 }
 
+loadHTML('https://trioluna.com/static/data/cervantes-data.html');
+
 var $don = $('#don-quixote-img');
 $don.on('click', function() {
     loadHTML('https://trioluna.com/static/data/cervantes-data.html');
