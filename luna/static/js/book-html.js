@@ -3,8 +3,6 @@ function allOpacity(val) {
     $imgs.css('opacity', 0.5);
 }
 
-console.log("h")
-
 function loadHTML(url) {
     var req = new XMLHttpRequest();
     req.onload = function() {
@@ -28,5 +26,12 @@ $tale.on('click', function() {
     loadHTML('https://trioluna.com/static/data/dickens-data.html');
     allOpacity(0.5);
     $tale.css('opacity', 1);
+});
+
+var $lord = $('#lotr-img');
+$lord.on('click', function() {
+    loadHTML('https://trioluna.com/static/data/tolkien-data.html');
+    allOpacity(0.5);
+    $lord.css('opacity', 1);
 });
 
