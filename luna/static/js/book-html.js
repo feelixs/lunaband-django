@@ -3,6 +3,7 @@ function allOpacity(val) {
     $imgs.css('opacity', 0.5);
 }
 
+console.log("h")
 
 function loadHTML(url) {
     var req = new XMLHttpRequest();
