@@ -14,10 +14,9 @@ function loadHTML(url) {
     req.send(null);
 }
 
-loadHTML('http://trioluna.com/static/data/cervantes-data.html');
 
-var $don =  document.getElementById('don-quixote-img');
-$don.addEventListener('click', function() {
+var $don = $('#don-quixote-img');
+$don.on('click', function() {
     loadHTML('http://trioluna.com/static/data/cervantes-data.html');
     allOpacity(0.5);
     $don.css('opacity', 1);
