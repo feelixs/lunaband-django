@@ -5,11 +5,11 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    biosTextFields.push(new DualLangTextField(`/static/text/bios/carmen`, $('#carmen-bio')));
-    biosTextFields.push(new DualLangTextField(`/static/text/bios/marco`, $('#marco-bio')));
-    biosTextFields.push(new DualLangTextField(`/static/text/bios/nicolas`, $('#nicolas-bio')));
-    biosTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
-    biosTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
+    biosTextFields.push(new DualLangTextField(`/static/data/text/bios.xml`, 0, $('#carmen-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/data/text/bios.xml`, 1, $('#marco-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/data/text/bios.xml`, 2, $('#nicolas-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/data/text/bios.xml`, $('#footer-text')));
+    biosTextFields.push(new DualLangTextField( `/static/data/text/bios.xml`, $('#copyright')));
     bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);

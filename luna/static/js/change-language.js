@@ -31,29 +31,29 @@ function applyNavLanguageChange(newLang) {
     $patreonNav.html(newLang === 'es' ? 'Contacto' : 'Contact');
 }
 
-function DualLangTextField(baseDir, element) {
+function DualLangTextField(xmlFile, index, element) {
     /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
     */
-    this.baseDir = baseDir; // the name of the file - used as {path-to-baseDir}/{language}
+    this.xmlFile = xmlFile; // the name of the file - used as {path-to-baseDir}/{language}
+    this.index = index;
     this.element = element; // the element whose inner html should be set to this.getText()
+
     this.getText = function(lang) {
-        // method of retrieving file contents from server found at:
-        // https://stackoverflow.com/a/14446538
-        fetch(`https://trioluna.com${this.baseDir}/${lang}`) // fetch file from the server
-            .then((res) => {
-                if (!res.ok) { // if response was not successful
-                    // don't modify the innerhtml, and default to whatever is hard-coded into it
-                    throw new Error(`${this.baseDir}/${lang} - error fetching file`);
-                }
-                // for some reason, setting this.element.innerHTML here didn't work
-                // so let's return it instead, and set it outside this response clause
-                return res.text();
-            })
-            .then((text) => { // set it from the respone's return
-                $(this.element).html(text); // if successful, set the innerhtml to the file contents
-            });
+        var xhr = new XMLHttpRequest();
+        let thisObj = this; // store this as we'll need this scope inside the onload function
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                let xmlContents = xhr.responseXML;
+                let person = xmlContents.getElementsByTagName('person')[thisObj.index];
+                $(thisObj.element).html(person.getElementsByTagName(lang)[0]); // if successful, set the innerhtml to the file contents
+            } else {
+                throw new Error(`${thisObj.xmlFile} - error fetching file`);
+            }
+        }
+        xhr.open('GET', this.xmlFile, true);
+        xhr.send(null);
     }
     return this
 }
