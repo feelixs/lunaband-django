@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     homeTextFields.push(new DualLangTextField(`/static/text/home/div2`, document.getElementById('div2-text')));
     homeTextFields.push(new DualLangTextField(`/static/text/footer`, document.getElementById('footer-text')));
     homeTextFields.push(new DualLangTextField( `/static/text/copyright`, document.getElementById('copyright')));
-    homeDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
-                                           'https://trioluna.com/static/images/buttons/globe-white-es.webp',
+    homeDualImages.push(new DualLangImage('http://trioluna.com/static/images/buttons/globe-white-en.webp',
+                                           'http://trioluna.com/static/images/buttons/globe-white-es.webp',
                                                    document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
 })

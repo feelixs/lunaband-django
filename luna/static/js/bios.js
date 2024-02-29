@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     biosTextFields.push(new DualLangTextField(`/static/text/bios/nicolas`, document.getElementById('nicolas-bio')));
     biosTextFields.push(new DualLangTextField(`/static/text/footer`, document.getElementById('footer-text')));
     biosTextFields.push(new DualLangTextField( `/static/text/copyright`, document.getElementById('copyright')));
-    bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
-                                         'https://trioluna.com/static/images/buttons/globe-white-es.webp',
+    bioDualImages.push(new DualLangImage('http://trioluna.com/static/images/buttons/globe-white-en.webp',
+                                         'http://trioluna.com/static/images/buttons/globe-white-es.webp',
                                                  document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
 })

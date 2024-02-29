@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     galTextFields.push(new DualLangTextField( `/static/text/copyright`, document.getElementById('copyright')));
     /* when we fetch the text from the server, we need a fullpath that included 'luna'.
      when we set the image div in a duallangimage, we don't need 'luna' */
-    galDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
-                                            'https://trioluna.com/static/images/buttons/globe-white-es.webp',
+    galDualImages.push(new DualLangImage('http://trioluna.com/static/images/buttons/globe-white-en.webp',
+                                            'http://trioluna.com/static/images/buttons/globe-white-es.webp',
         document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
     loadGallery();
@@ -52,7 +52,7 @@ function loadGallery() {
         imgDiv.className = 'gallery-container';
         let img = document.createElement('img');
         img.className = 'gallery-img rounded';
-        img.src = `https://trioluna.com/static/images/gallery/imgs/${pictures[i]}`;
+        img.src = `http://trioluna.com/static/images/gallery/imgs/${pictures[i]}`;
         setAltToFile(img, `${trimFilename(pictures[i])}.txt`); // dynamically det the img's alt
 
         imgDiv.appendChild(img); // put the image inside its div
@@ -66,7 +66,7 @@ function trimFilename(filename) {
 }
 
 function setAltToFile(img, filename) {
-    fetch(`https://trioluna.com/static/images/gallery/alts/${filename}`) // fetch file from the server
+    fetch(`http://trioluna.com/static/images/gallery/alts/${filename}`) // fetch file from the server
         .then((res) => {
             if (!res.ok) { // if response was not successful
                 img.alt = "undefined";
