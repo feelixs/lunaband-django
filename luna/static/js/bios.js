@@ -1,29 +1,27 @@
 var biosTextFields = []
 var bioDualImages = []
-document.addEventListener('DOMContentLoaded', function () {
+
+$(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
-
-        Tutorial I used for running JS on page load:
-        https://stackoverflow.com/a/25984032
     */
-    biosTextFields.push(new DualLangTextField(`/static/text/bios/carmen`, document.getElementById('carmen-bio')));
-    biosTextFields.push(new DualLangTextField(`/static/text/bios/marco`, document.getElementById('marco-bio')));
-    biosTextFields.push(new DualLangTextField(`/static/text/bios/nicolas`, document.getElementById('nicolas-bio')));
-    biosTextFields.push(new DualLangTextField(`/static/text/footer`, document.getElementById('footer-text')));
-    biosTextFields.push(new DualLangTextField( `/static/text/copyright`, document.getElementById('copyright')));
+    biosTextFields.push(new DualLangTextField(`/static/text/bios/carmen`, $('#carmen-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/text/bios/marco`, $('#marco-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/text/bios/nicolas`, $('#nicolas-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
+    biosTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
     bioDualImages.push(new DualLangImage('http://trioluna.com/static/images/buttons/globe-white-en.webp',
-                                         'http://trioluna.com/static/images/buttons/globe-white-es.webp',
-                                                 document.getElementById('change-language-img')))
+        'http://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
-})
+});
 
 function applyMainLanguageChange(newlang) {
     /*
         Applies language change to the page's main text, this will be overriden for each page
     */
     document.title = newlang === 'es' ? 'Luna | Sobre' : 'Luna | About';
-    document.getElementById('page-title').innerText = newlang === 'es' ? 'Conoce al Trío' : 'Meet the Trio';
+    var $biosTitle = $('#page-title');
+    $biosTitle.html(newlang === 'es' ? 'Conoce al Trío' : 'Meet the Trio');
     loadContentInLang(newlang);
 }
 
