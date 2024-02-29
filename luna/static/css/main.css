@@ -11,6 +11,10 @@ html, body {
     height: 100%;
 }
 
+.padding-20 {
+    padding: 20px;
+}
+
 .main-title-text {
     font-size: 2em;
 }
@@ -36,6 +40,10 @@ html, body {
 
 .rounded {
     border-radius: 20px;
+}
+
+.half-rounded {
+    border-radius: 10px;
 }
 
 main, div {
