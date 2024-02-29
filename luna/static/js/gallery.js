@@ -5,8 +5,8 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    galTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
-    galTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
+    galTextFields.push(new HTMLDualLangTextField(`/static/text/footer`, $('#footer-text')));
+    galTextFields.push(new HTMLDualLangTextField( `/static/text/copyright`, $('#copyright')));
     /* when we fetch the text from the server, we need a fullpath that included 'luna'.
      when we set the image div in a duallangimage, we don't need 'luna' */
     galDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',

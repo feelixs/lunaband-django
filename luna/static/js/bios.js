@@ -8,8 +8,8 @@ $(document).ready(function () {
     biosTextFields.push(new XMLDualLangTextField(`/static/data/text/bios.xml`, 0, $('#carmen-bio')));
     biosTextFields.push(new XMLDualLangTextField(`/static/data/text/bios.xml`, 1, $('#marco-bio')));
     biosTextFields.push(new XMLDualLangTextField(`/static/data/text/bios.xml`, 2, $('#nicolas-bio')));
-    biosTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
-    biosTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
+    biosTextFields.push(new HTMLDualLangTextField(`/static/data/footer`, $('#footer-text')));
+    biosTextFields.push(new HTMLDualLangTextField( `/static/data/copyright`, $('#copyright')));
     bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);

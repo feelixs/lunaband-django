@@ -31,7 +31,7 @@ function applyNavLanguageChange(newLang) {
     $patreonNav.html(newLang === 'es' ? 'Contacto' : 'Contact');
 }
 
-function DualLangTextField(baseDir, element) {
+function HTMLDualLangTextField(baseDir, element) {
     /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
