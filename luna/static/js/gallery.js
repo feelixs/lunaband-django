@@ -65,13 +65,13 @@ function setAltToFile(img, filename) {
     fetch(`https://trioluna.com/static/images/gallery/alts/${filename}`) // fetch file from the server
         .then((res) => {
             if (!res.ok) { // if response was not successful
-                img.alt = "undefined";
+                img.attr('alt', "undefined");
                 throw new Error(`/luna/images/gallery/alts/${filename} - error fetching file`);
             }
             return res.text();
         })
         .then((text) => { // set it from the respone's return
-            img.alt = text;
+            img.attr('alt', text)
             console.log("alt set to " + text);
         });
 }
