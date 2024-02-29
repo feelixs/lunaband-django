@@ -61,6 +61,7 @@ function trimFilename(filename) {
 }
 
 function setAltToFile(img, filename) {
+    console.log("setting alt for " + filename);
     fetch(`https://trioluna.com/static/images/gallery/alts/${filename}`) // fetch file from the server
         .then((res) => {
             if (!res.ok) { // if response was not successful
@@ -71,5 +72,6 @@ function setAltToFile(img, filename) {
         })
         .then((text) => { // set it from the respone's return
             img.alt = text;
+            console.log("alt set to " + text);
         });
 }
