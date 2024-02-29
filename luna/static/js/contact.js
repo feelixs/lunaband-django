@@ -6,8 +6,8 @@ $(document).ready(function () {
         Load this page's content in the default language when the page loads.
     */
     cntTextFields.push(new XMLDualLangTextField(`/static/data/xml/contact.xml`, 0, $('#contact-desc')));
-    cntTextFields.push(new HTMLDualLangTextField(`/static/data/footer`, $('#footer-text')));
-    cntTextFields.push(new HTMLDualLangTextField( `/static/data/copyright`, $('#copyright')));
+    cntTextFields.push(new HTMLDualLangTextField(`/static/data/html/footer`, $('#footer-text')));
+    cntTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
     cntDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
