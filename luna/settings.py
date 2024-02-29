@@ -14,7 +14,7 @@ from pathlib import Path
 from os import getenv, path
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
