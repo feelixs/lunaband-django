@@ -54,7 +54,7 @@ function HTMLDualLangTextField(baseDir, element) {
     return this
 }
 
-function XMLDualLangTextField(xmlFile, index, element, prependText) {
+function XMLDualLangTextField(xmlFile, index, element, prependText='') {
     /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
@@ -70,7 +70,7 @@ function XMLDualLangTextField(xmlFile, index, element, prependText) {
             if (xhr.status === 200) {
                 var xmlContents = xhr.responseXML;
                 let thisField = xmlContents.getElementsByTagName('field')[thisObj.index];
-                $(thisObj.element).html(thisField.getElementsByTagName(lang)[0]); // if successful, set the innerhtml to the file contents
+                $(thisObj.element).html(`${prependText}${thisField.getElementsByTagName(lang)[0]}`); // if successful, set the innerhtml to the file contents
             } else {
                 throw new Error(`${thisObj.xmlFile} - error fetching file`);
             }
