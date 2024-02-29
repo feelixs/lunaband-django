@@ -1,0 +1,41 @@
+#form-div {
+    text-align: left;
+}
+input[type=email], textarea {
+    /* style both text areas on this page to be wide */
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+.margin-left-small {
+    margin-left: 2vw;
+}
+
+button[type=submit] {
+    background-color: #6c6c6c;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type=submit]:hover {
+    background-color: #a2a2a2;
+}
+
+
+@media (max-width: 1000px) {
+    /* on mobile devices the inputs should take up the whole width */
+    .flex-container {
+        padding: 0;
+    }
+
+    .margin-left-small {
+        margin-left: 0;
+    }
+}
