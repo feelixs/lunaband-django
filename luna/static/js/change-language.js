@@ -15,15 +15,20 @@ function toggleLanguage() {
     applyMainLanguageChange(currentLang)
 }
 
-
 function applyNavLanguageChange(newLang) {
     /*
         Applies language change between english and spanish for the navigation bar's text
     */
     // manually update the nav's text fields
-    document.getElementById('home-nav').innerHTML = newLang === 'es' ? 'Inicio' : 'Home';
-    document.getElementById('bios-nav').innerHTML = newLang === 'es' ? 'Sobre' : 'About';
-    document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
+    var $homeNav = $('#home-nav');
+    var $biosNav = $('#bios-nav');
+    var $mediaNav = $('#media-nav');
+    var $patreonNav = $('#patreon-nav');
+
+    $homeNav.html(newLang === 'es' ? 'Inicio' : 'Home');
+    $biosNav.html(newLang === 'es' ? 'Sobre' : 'About');
+    $mediaNav.html(newLang === 'es' ? 'Medios' : 'Media');
+    $patreonNav.html(newLang === 'es' ? 'Contacto' : 'Contact');
 }
 
 function DualLangTextField(baseDir, element) {
@@ -47,7 +52,7 @@ function DualLangTextField(baseDir, element) {
                 return res.text();
             })
             .then((text) => { // set it from the respone's return
-                this.element.innerHTML = text; // if successful, set the innerhtml to the file contents
+                $(this.element).html(text); // if successful, set the innerhtml to the file contents
             });
     }
     return this
@@ -60,7 +65,11 @@ function DualLangImage(enPath, esPath, element) {
     this.getImg = function(lang) {
         // should display the opposite language of the current one
         // (the one that the button will change the webpage to if clicked)
-        this.element.src = lang === 'es' ? this.enPath : this.esPath;
+        $(this.element).fadeOut('fast', () => {
+            // update this image's src to display the correct language
+            $(this.element).attr('src', lang === 'es' ? this.enPath : this.esPath).fadeIn('fast');
+        });
+
     }
     return this
 }
