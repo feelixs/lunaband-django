@@ -42,10 +42,10 @@ function DualLangTextField(xmlFile, index, element) {
 
     this.getText = function(lang) {
         var xhr = new XMLHttpRequest();
-        let thisObj = this; // store this as we'll need this scope inside the onload function
+        var thisObj = this; // store this as we'll need this scope inside the onload function
         xhr.onload = function() {
             if (xhr.status === 200) {
-                let xmlContents = xhr.responseXML;
+                var xmlContents = xhr.responseXML;
                 console.log(xmlContents);
                 console.log(thisObj.xmlFile);
                 let person = xmlContents.getElementsByTagName('person');
