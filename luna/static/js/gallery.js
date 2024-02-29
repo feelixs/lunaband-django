@@ -61,22 +61,3 @@ function loadGallery(jsonFile) {
     galleryXHR.open('GET', jsonFile, true);
     galleryXHR.send(null);
 }
-
-function trimFilename(filename) {
-    // https://stackoverflow.com/a/2187293
-    return filename.substring(0, filename.lastIndexOf('.'));
-}
-
-function setAltToFile(img, filename) {
-    fetch(`https://trioluna.com/static/images/gallery/alts/${filename}`) // fetch file from the server
-        .then((res) => {
-            if (!res.ok) { // if response was not successful
-                img.attr('alt', "undefined");
-                throw new Error(`/luna/images/gallery/alts/${filename} - error fetching file`);
-            }
-            return res.text();
-        })
-        .then((text) => { // set it from the respone's return
-            img.attr('alt', text)
-        });
-}
