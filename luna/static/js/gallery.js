@@ -48,6 +48,8 @@ function loadGallery(jsonFile) {
         var $galleryDiv = $('#main-gallery-container');
         if (galleryXHR.status === 200) {
             let jsonContents = JSON.parse(galleryXHR.responseText);
+            console.log(jsonContents);
+            console.log(jsonContents.pictures);
             jsonContents.pictures.forEach( function(thisPic) {
                 // thisPic is the current index of jsonContents (the current picture from the list in the json)
                 let $tempDiv = $('<div>').attr('class', 'gallery-container');
