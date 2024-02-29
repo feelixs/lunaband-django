@@ -48,7 +48,7 @@ function loadGallery() {
     var $galleryDiv = $('#main-gallery-container');
     pictures.forEach(function (picFilename) {
         let $tempDiv = $('<div>').attr('class', 'gallery-container');
-        let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `images/gallery/imgs/${picFilename}`);
+        let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `http://trioluna.com/static/images/gallery/imgs/${picFilename}`);
         $tempDiv.append($tempImg);
         $galleryDiv.append($tempDiv);
         setAltToFile($tempImg, `${trimFilename(picFilename)}.txt`);
