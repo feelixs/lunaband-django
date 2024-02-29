@@ -1,28 +1,23 @@
 var homeTextFields = []
 var homeDualImages = []
 
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
-
-        Tutorial I used for running JS on page load:
-        https://stackoverflow.com/a/25984032
     */
-    homeTextFields.push(new DualLangTextField(`/static/text/home/div1`, document.getElementById('div1-text')));
-    homeTextFields.push(new DualLangTextField(`/static/text/home/div2`, document.getElementById('div2-text')));
-    homeTextFields.push(new DualLangTextField(`/static/text/footer`, document.getElementById('footer-text')));
-    homeTextFields.push(new DualLangTextField( `/static/text/copyright`, document.getElementById('copyright')));
-    homeDualImages.push(new DualLangImage('http://trioluna.com/static/images/buttons/globe-white-en.webp',
-                                           'http://trioluna.com/static/images/buttons/globe-white-es.webp',
-                                                   document.getElementById('change-language-img')))
+    homeTextFields.push(new DualLangTextField(`/static/text/home/div1`, $('#div1-text')));
+    homeTextFields.push(new DualLangTextField(`/static/text/home/div2`, $('#div2-text')));
+    homeTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
+    homeTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
+    homeDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp',
+        'images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
-})
+});
 
 function applyMainLanguageChange(newlang) {
     /*
         Applies language change to the page's main text, this will be overriden for each page
     */
-
     document.title = newlang === 'es' ? 'Luna | Inicio' : 'Luna | Home';
     loadContentInLang(newlang)
 }
