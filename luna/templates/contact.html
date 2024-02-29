@@ -1,15 +1,15 @@
 <!doctype html>
-{% load static %}
+{% load ds %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="{% static 'images/logos/luna-logo.webp' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/flex-boxes.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+    <link rel="icon" href="{% ds 'images/logos/luna-logo.webp' %}">
+    <link rel="stylesheet" type="text/css" href="{% ds 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% ds 'css/flex-boxes.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% ds 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% ds 'css/contact.css' %}">
     <title>Luna | Contact</title>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
 <nav class="navbar" id="navbar">
     <div class="nav-content">
         <div class="logo">
-            <a href="/"><img alt="Trio Luna Logo" class="img-logo trans-17" src="{% static 'images/logos/luna-logo.webp' %}"></a>
+            <a href="/"><img alt="Trio Luna Logo" class="img-logo trans-17" src="{% ds 'images/logos/luna-logo.webp' %}"></a>
         </div>
         <ul class="nav-links">
             <li><a id="home-nav" class="only-desktop" href="/">Home</a></li>
@@ -28,7 +28,7 @@
             <li><a id="media-nav" href="/gallery/">Media</a></li>
             <li><a id="patreon-nav" href="#">Contact</a></li>
             <li class="lang-chg trans-17">
-                <button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="{% static 'images/buttons/globe-white-es.webp' %}"></button>
+                <button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="{% ds 'images/buttons/globe-white-es.webp' %}"></button>
             </li>
         </ul>
     </div>
@@ -68,7 +68,7 @@
     <div class="flex-container">
         <div class="trans-contained-box" id="copyright">
             Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank" href="https://felixcreations.com"><img
-                alt="Felixcreations Logo" class="img-logo trans-30" src="{% static 'images/logos/felix-logo-black.webp' %}"></a>
+                alt="Felixcreations Logo" class="img-logo trans-30" src="{% ds 'images/logos/felix-logo-black.webp' %}"></a>
         </div>
     </div>
     <div class="flex-container" style="padding-bottom: 20px" id="footer-text">
@@ -78,7 +78,7 @@
     </div>
 </footer>
 
-<script src="{% static 'js/change-language.js' %}"></script>
-<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% ds 'js/change-language.js' %}"></script>
+<script src="{% ds 'js/contact.js' %}"></script>
 </body>
 </html>
