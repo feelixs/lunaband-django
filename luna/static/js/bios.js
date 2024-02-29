@@ -5,9 +5,9 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    biosTextFields.push(new XMLDualLangTextField(`/static/data/text/bios.xml`, 0, $('#carmen-bio')));
-    biosTextFields.push(new XMLDualLangTextField(`/static/data/text/bios.xml`, 1, $('#marco-bio')));
-    biosTextFields.push(new XMLDualLangTextField(`/static/data/text/bios.xml`, 2, $('#nicolas-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/text/bios/carmen`, $('#carmen-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/text/bios/marco`, $('#marco-bio')));
+    biosTextFields.push(new DualLangTextField(`/static/text/bios/nicolas`, $('#nicolas-bio')));
     biosTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
     biosTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
     bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
