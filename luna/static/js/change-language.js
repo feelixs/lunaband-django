@@ -46,6 +46,8 @@ function DualLangTextField(xmlFile, index, element) {
         xhr.onload = function() {
             if (xhr.status === 200) {
                 let xmlContents = xhr.responseXML;
+                console.log(xmlContents);
+                console.log(thisObj.xmlFile);
                 let person = xmlContents.getElementsByTagName('person');
                 $(thisObj.element).html(person[thisObj.index].getElementsByTagName(lang)[0]); // if successful, set the innerhtml to the file contents
             } else {
