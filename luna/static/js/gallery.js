@@ -9,8 +9,8 @@ $(document).ready(function () {
     galTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
     /* when we fetch the text from the server, we need a fullpath that included 'luna'.
      when we set the image div in a duallangimage, we don't need 'luna' */
-    galDualImages.push(new DualLangImage('http://trioluna.com/static/images/buttons/globe-white-en.webp',
-        'http://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+    galDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
+        'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
     loadGallery();
 })
@@ -48,7 +48,7 @@ function loadGallery() {
     var $galleryDiv = $('#main-gallery-container');
     pictures.forEach(function (picFilename) {
         let $tempDiv = $('<div>').attr('class', 'gallery-container');
-        let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `http://trioluna.com/static/images/gallery/imgs/${picFilename}`);
+        let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `https://trioluna.com/static/images/gallery/imgs/${picFilename}`);
         $tempDiv.append($tempImg);
         $galleryDiv.append($tempDiv);
         setAltToFile($tempImg, `${trimFilename(picFilename)}.txt`);
@@ -61,7 +61,7 @@ function trimFilename(filename) {
 }
 
 function setAltToFile(img, filename) {
-    fetch(`http://trioluna.com/static/images/gallery/alts/${filename}`) // fetch file from the server
+    fetch(`https://trioluna.com/static/images/gallery/alts/${filename}`) // fetch file from the server
         .then((res) => {
             if (!res.ok) { // if response was not successful
                 img.alt = "undefined";

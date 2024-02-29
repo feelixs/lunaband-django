@@ -10,8 +10,8 @@ $(document).ready(function () {
     biosTextFields.push(new DualLangTextField(`/static/text/bios/nicolas`, $('#nicolas-bio')));
     biosTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
     biosTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
-    bioDualImages.push(new DualLangImage('http://trioluna.com/static/images/buttons/globe-white-en.webp',
-        'http://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+    bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
+        'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
 });
 
