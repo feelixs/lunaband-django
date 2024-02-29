@@ -12,7 +12,7 @@ $(document).ready(function () {
     galDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
-    loadGallery();
+    loadGallery("https://trioluna.com/static/data/json/gallery.json");
 })
 
 function applyMainLanguageChange(newlang) {
@@ -37,22 +37,27 @@ function loadContentInLang(language) {
     }
 }
 
-function loadGallery() {
+function loadGallery(jsonFile) {
+    /*
+        Loads pictures with paths provided by `jsonFile` into the page's main gallery
+     */
     $('#gallery-placeholder').remove(); // remove the placeholder "loading gallery" text
 
-    var pictures = [ '068A62F9.webp', 'P1001442.webp',  '468D91AF.webp', 'P1001211.webp',
-                             'P1001437.webp', 'P1001384.webp', 'P1001197.webp', 'P1001430.webp',
-                             'P1001262.webp', 'P1001396.webp', 'P1001427.webp', 'P1001195.webp',
-                             'P1000427.webp', 'P1000708.webp', 'P1001406.webp', 'P1001446.webp' ]
-
-    var $galleryDiv = $('#main-gallery-container');
-    pictures.forEach(function (picFilename) {
-        let $tempDiv = $('<div>').attr('class', 'gallery-container');
-        let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `https://trioluna.com/static/images/gallery/imgs/${picFilename}`);
-        $tempDiv.append($tempImg);
-        $galleryDiv.append($tempDiv);
-        setAltToFile($tempImg, `${trimFilename(picFilename)}.txt`);
-    })
+    var galleryXHR = new XMLHttpRequest();
+    galleryXHR.onload = function () {
+        var $galleryDiv = $('#main-gallery-container');
+        if (galleryXHR.status === 200) {
+            let jsonContents = JSON.parse(galleryXHR.responseText);
+            jsonContents.pictures.forEach( function(thisPic) {
+                // thisPic is the current index of jsonContents (the current picture from the list in the json)
+                let $tempDiv = $('<div>').attr('class', 'gallery-container');
+                let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', thisPic.url);
+                $tempImg.attr('alt', thisPic.alt);
+                $tempDiv.append($tempImg);
+                $galleryDiv.append($tempDiv);
+            });
+        }
+    }
 }
 
 function trimFilename(filename) {
