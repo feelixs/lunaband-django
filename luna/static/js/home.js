@@ -5,10 +5,10 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    homeTextFields.push(new HTMLDualLangTextField(`/static/text/home/div1`, $('#div1-text')));
-    homeTextFields.push(new HTMLDualLangTextField(`/static/text/home/div2`, $('#div2-text')));
-    homeTextFields.push(new HTMLDualLangTextField(`/static/text/footer`, $('#footer-text')));
-    homeTextFields.push(new HTMLDualLangTextField( `/static/text/copyright`, $('#copyright')));
+    homeTextFields.push(new XMLDualLangTextField(`/static/data/xml/home.xml`, 0, $('#div1-text')), '&ensp;&ensp;&ensp;&ensp;');
+    homeTextFields.push(new XMLDualLangTextField(`/static/data/xml/home.xml`, 1, $('#div2-text')), '&ensp;&ensp;&ensp;&ensp;');
+    homeTextFields.push(new HTMLDualLangTextField(`/static/data/footer`, $('#footer-text')));
+    homeTextFields.push(new HTMLDualLangTextField( `/static/data/copyright`, $('#copyright')));
     homeDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
