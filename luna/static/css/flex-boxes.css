@@ -5,6 +5,15 @@
     justify-content: center;
 }
 
+.flex-container-start {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25vw;
+    padding-right: 25vw;
+    justify-content: center;
+    align-items: start;
+}
+
 .flex-container-fill {
     display: flex;
     justify-content: center;
