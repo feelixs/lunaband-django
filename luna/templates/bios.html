@@ -10,9 +10,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/flex-boxes.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bios.css' %}">
-    <script src="{% static 'js/change-language.js' %}"></script>
-    <script src="{% static 'js/bios.js' %}"></script>
     <title>Luna | About</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- if we fail to load from the CDN, use our local download of jquery -->
+    <script>window.jQuery || document.write('<script src="http://trioluna.com/static/js/jquery-3-7-1.js"><\/script>')</script>
 </head>
 <body>
 <nav class="navbar" id="navbar">
@@ -77,5 +79,8 @@
         If you have any questions or concerns, please contact Michael Felix through <a class="email-link" target="_blank" href="mailto:mikemh@uri.edu">mikemh@uri.edu</a>
     </div>
 </footer>
+
+<script src="{% static 'js/change-language.js' %}"></script>
+<script src="{% static 'js/bios.js' %}"></script>
 </body>
 </html>
