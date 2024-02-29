@@ -32,6 +32,33 @@ function applyNavLanguageChange(newLang) {
 }
 
 function DualLangTextField(xmlFile, index, element) {
+        /*
+        A text field which can be converted between english and spanish.
+        The files of the text in both languages must be fetched from the server prior to displaying any text.
+    */
+    this.baseDir = baseDir; // the name of the file - used as {path-to-baseDir}/{language}
+    this.element = element; // the element whose inner html should be set to this.getText()
+    this.getText = function(lang) {
+        // method of retrieving file contents from server found at:
+        // https://stackoverflow.com/a/14446538
+        fetch(`https://trioluna.com${this.baseDir}/${lang}`) // fetch file from the server
+            .then((res) => {
+                if (!res.ok) { // if response was not successful
+                    // don't modify the innerhtml, and default to whatever is hard-coded into it
+                    throw new Error(`${this.baseDir}/${lang} - error fetching file`);
+                }
+                // for some reason, setting this.element.innerHTML here didn't work
+                // so let's return it instead, and set it outside this response clause
+                return res.text();
+            })
+            .then((text) => { // set it from the respone's return
+                this.element.innerHTML = text; // if successful, set the innerhtml to the file contents
+            });
+    }
+    return this
+}
+
+function XMLDualLangTextField(xmlFile, index, element) {
     /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
