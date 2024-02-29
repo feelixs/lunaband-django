@@ -32,7 +32,7 @@ function applyNavLanguageChange(newLang) {
 }
 
 function DualLangTextField(baseDir, element) {
-        /*
+    /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
     */
