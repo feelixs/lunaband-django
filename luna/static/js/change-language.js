@@ -69,8 +69,8 @@ function XMLDualLangTextField(xmlFile, index, element) {
         xhr.onload = function() {
             if (xhr.status === 200) {
                 var xmlContents = xhr.responseXML;
-                let person = xmlContents.getElementsByTagName('person')[thisObj.index];
-                $(thisObj.element).html(person.getElementsByTagName(lang)[0]); // if successful, set the innerhtml to the file contents
+                let thisField = xmlContents.getElementsByTagName('field')[thisObj.index];
+                $(thisObj.element).html(thisField.getElementsByTagName(lang)[0]); // if successful, set the innerhtml to the file contents
             } else {
                 throw new Error(`${thisObj.xmlFile} - error fetching file`);
             }

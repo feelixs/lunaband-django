@@ -5,11 +5,9 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    cntTextFields.push(new HTMLDualLangTextField(`/static/text/home/div1`, $('#div1-text')));
-    cntTextFields.push(new HTMLDualLangTextField(`/static/text/home/div2`, $('#div2-text')));
-    cntTextFields.push(new HTMLDualLangTextField(`/static/text/footer`, $('#footer-text')));
-    cntTextFields.push(new HTMLDualLangTextField( `/static/text/copyright`, $('#copyright')));
-    cntTextFields.push(new HTMLDualLangTextField( `/static/text/contact/desc`, $('#contact-desc')));
+    cntTextFields.push(new XMLDualLangTextField(`/static/data/xml/contact.xml`, 0, $('#contact-desc')));
+    cntTextFields.push(new HTMLDualLangTextField(`/static/data/footer`, $('#footer-text')));
+    cntTextFields.push(new HTMLDualLangTextField( `/static/data/copyright`, $('#copyright')));
     cntDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
