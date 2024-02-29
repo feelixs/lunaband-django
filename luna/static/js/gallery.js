@@ -60,6 +60,8 @@ function loadGallery(jsonFile) {
             });
         }
     }
+    galleryXHR.open('GET', jsonFile, true);
+    galleryXHR.send(null);
 }
 
 function trimFilename(filename) {
