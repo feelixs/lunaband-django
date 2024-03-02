@@ -13,7 +13,21 @@ function toggleLanguage() {
     } else if (oldLang === 'es') {
         currentLang = 'en';
     }
+
     console.log(`Language changed from ${oldLang} to ${currentLang}`)
+
+        // save the user's current language on the server (cookie)
+    let setLangXHR = new XMLHttpRequest();
+    setLangXHR.onload = function () {
+        if (setLangXHR.status === 200) {
+            console.log(`Cached '${currentLang}' as the user's current language`)
+        } else {
+            console.log(`Error caching '${currentLang}' as the user's current language`)
+        }
+    }
+    setLangXHR.open('POST', `https://trioluna.com/api/set-language?language=${currentLang}`, true);
+    setLangXHR.send(null);
+
     document.documentElement.lang = currentLang; // update the page's lang attribute
     loadContentInLang(currentLang);
 }
