@@ -7,6 +7,7 @@ function toggleLanguage() {
     /*
        Swaps between Spanish and English, and update the page's text to the new lang
     */
+    currentLang = $('html').attr('lang'); // make sure currentLang is updated to the real current language
     if (currentLang === 'en') {
         currentLang = 'es';
     } else if (currentLang === 'es') {
