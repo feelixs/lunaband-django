@@ -29,7 +29,9 @@ function loadContentInLang(language) {
     /*
         This is run when the page initially loads, and whenever the language is changed.
     */
-    applyMainLanguageChange(language)
+    applyMainLanguageChange(language);
+    applyNavLanguageChange(language);
+    
     for (let i = 0; i < homeTextFields.length; i++) {
         homeTextFields[i].getText(language);
     }

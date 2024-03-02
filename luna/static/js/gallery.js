@@ -32,7 +32,9 @@ function loadContentInLang(language) {
     /*
         This is run when the page initially loads, and whenever the language is changed.
     */
-    applyMainLanguageChange(language)
+    applyMainLanguageChange(language);
+    applyNavLanguageChange(language);
+
     for (let i = 0; i < galTextFields.length; i++) {
         galTextFields[i].getText(language);
     }
