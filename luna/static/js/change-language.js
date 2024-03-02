@@ -1,4 +1,7 @@
-var currentLang = 'en';
+$(document).ready(function () {
+    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
+    var currentLang = $('html').attr('lang');
+});
 
 function toggleLanguage() {
     /*
@@ -12,7 +15,7 @@ function toggleLanguage() {
 
     document.documentElement.lang = currentLang; // update the page's lang attribute
     applyNavLanguageChange(currentLang);
-    applyMainLanguageChange(currentLang)
+    applyMainLanguageChange(currentLang);
 }
 
 function applyNavLanguageChange(newLang) {
