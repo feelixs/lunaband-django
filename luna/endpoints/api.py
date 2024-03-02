@@ -5,8 +5,6 @@ from django.views.decorators.csrf import csrf_exempt
 from asgiref.sync import sync_to_async, async_to_sync
 
 @require_http_methods(["POST"])
-
-
 @sync_to_async
 @csrf_exempt
 @async_to_sync
