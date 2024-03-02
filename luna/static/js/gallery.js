@@ -11,6 +11,10 @@ $(document).ready(function () {
      when we set the image div in a duallangimage, we don't need 'luna' */
     galDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+
+    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
+    var currentLang = $('html').attr('lang');
+    console.log(currentLang);
     loadContentInLang(currentLang);
     loadGallery("https://trioluna.com/static/data/json/gallery.json");
 })

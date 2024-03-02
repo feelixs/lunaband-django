@@ -1,10 +1,7 @@
-var currentLang = "en"; // we need to set this here to have its scope be everywhere, we'll change it later
+// we need to set this here to have its scope be everywhere, we'll change it later
+// - each webpage has its own associated script, which will set the currentlang in document.ready
+var currentLang = "en";
 
-$(document).ready(function () {
-    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
-    var currentLang = $('html').attr('lang');
-    console.log(currentLang);
-});
 
 function toggleLanguage() {
     /*

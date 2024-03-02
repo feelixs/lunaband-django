@@ -10,6 +10,10 @@ $(document).ready(function () {
     cntTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
     cntDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+
+    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
+    var currentLang = $('html').attr('lang');
+    console.log(currentLang);
     loadContentInLang(currentLang);
 })
 
