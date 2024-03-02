@@ -31,7 +31,7 @@ function loadContentInLang(language) {
     */
     applyMainLanguageChange(language);
     applyNavLanguageChange(language);
-    
+
     for (let i = 0; i < homeTextFields.length; i++) {
         homeTextFields[i].getText(language);
     }
