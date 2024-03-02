@@ -7,12 +7,11 @@ function toggleLanguage() {
     /*
        Swaps between Spanish and English, and update the page's text to the new lang
     */
-    let templang = 'en';
     if (currentLang === 'en') {
-        templang = 'es';
+        currentLang = 'es';
+    } else if (currentLang === 'es') {
+        currentLang = 'en';
     }
-    currentLang = templang;
-
     document.documentElement.lang = currentLang; // update the page's lang attribute
     loadContentInLang(currentLang);
 }
