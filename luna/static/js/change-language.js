@@ -16,7 +16,7 @@ function toggleLanguage() {
 
     console.log(`Language changed from ${oldLang} to ${currentLang}`)
 
-        // save the user's current language on the server (cookie)
+    // save the user's current language on the server (cookie)
     let setLangXHR = new XMLHttpRequest();
     setLangXHR.onload = function () {
         if (setLangXHR.status === 200) {
