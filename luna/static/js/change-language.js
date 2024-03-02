@@ -12,6 +12,7 @@ function toggleLanguage() {
     } else if (currentLang === 'es') {
         currentLang = 'en';
     }
+    console.log(`Language changed to ${currentLang}`)
     document.documentElement.lang = currentLang; // update the page's lang attribute
     loadContentInLang(currentLang);
 }
