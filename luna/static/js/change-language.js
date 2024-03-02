@@ -15,7 +15,6 @@ function toggleLanguage() {
 
     document.documentElement.lang = currentLang; // update the page's lang attribute
     applyNavLanguageChange(currentLang);
-    applyMainLanguageChange(currentLang);
 }
 
 function applyNavLanguageChange(newLang) {
