@@ -7,13 +7,13 @@ function toggleLanguage() {
     /*
        Swaps between Spanish and English, and update the page's text to the new lang
     */
-    currentLang = $('html').attr('lang'); // make sure currentLang is updated to the real current language
-    if (currentLang === 'en') {
+    let oldLang = $('html').attr('lang'); // get the current language (the actual currentLang var might be out of date)
+    if (oldLang === 'en') {
         currentLang = 'es';
-    } else if (currentLang === 'es') {
+    } else if (oldLang === 'es') {
         currentLang = 'en';
     }
-    console.log(`Language changed to ${currentLang}`)
+    console.log(`Language changed from ${oldLang} to ${currentLang}`)
     document.documentElement.lang = currentLang; // update the page's lang attribute
     loadContentInLang(currentLang);
 }
