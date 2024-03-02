@@ -13,7 +13,6 @@ $(document).ready(function () {
 
     // load the current langague from the document's 'lang' attribute, which was set by the server (django)
     var currentLang = $('html').attr('lang');
-    console.log(currentLang);
     loadContentInLang(currentLang);
 })
 
