@@ -26,7 +26,6 @@ function applyMainLanguageChange(newlang) {
     document.title = newlang === 'es' ? 'Luna | Sobre' : 'Luna | About';
     var $biosTitle = $('#page-title');
     $biosTitle.html(newlang === 'es' ? 'Conoce al Trío' : 'Meet the Trio');
-    loadContentInLang(newlang);
 }
 
 function loadContentInLang(language) {

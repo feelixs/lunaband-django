@@ -26,7 +26,6 @@ function applyMainLanguageChange(newlang) {
     var $galleryTitle = $('#page-title');
     document.title = newlang === 'es' ? 'Luna | Medios' : 'Luna | Media';
     $galleryTitle.html(newlang === 'es' ? 'Galería' : 'Gallery');
-    loadContentInLang(newlang)
 }
 
 function loadContentInLang(language) {

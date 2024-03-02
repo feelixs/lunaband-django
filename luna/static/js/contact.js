@@ -30,7 +30,6 @@ function applyMainLanguageChange(newlang) {
     $contactTitle.html(newlang === 'es' ? 'Contacto' : 'Contact Us');
     $emailTitle.html(newlang === 'es' ? 'Tu correo electrónico:' : 'Your Email:');
     $msgTitle.html(newlang === 'es' ? 'Tu Mensaje:' : 'Your Message:');
-    loadContentInLang(newlang)
 }
 
 function loadContentInLang(language) {
