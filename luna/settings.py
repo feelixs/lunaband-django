@@ -91,7 +91,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-          'options': f'-c search_path={getenv("DB_SCHEMA")}'
+          'options': f'-c search_path=fxschema'
         },
         'NAME': 'lunadb',
         'USER': 'fxdb',
