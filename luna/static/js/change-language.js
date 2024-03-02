@@ -1,3 +1,5 @@
+var currentLang = "en"; // we need to set this here to have its scope be everywhere, we'll change it later
+
 $(document).ready(function () {
     // load the current langague from the document's 'lang' attribute, which was set by the server (django)
     var currentLang = $('html').attr('lang');
