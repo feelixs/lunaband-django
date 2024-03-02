@@ -17,6 +17,21 @@ function toggleLanguage() {
     loadContentInLang(currentLang)
 }
 
+function applyNavLanguageChange(newLang) {
+    /*
+        Applies language change between english and spanish for the navigation bar's text
+    */
+    // manually update the nav's text fields
+    var $homeNav = $('#home-nav');
+    var $biosNav = $('#bios-nav');
+    var $mediaNav = $('#media-nav');
+    var $patreonNav = $('#patreon-nav');
+
+    $homeNav.html(newLang === 'es' ? 'Inicio' : 'Home');
+    $biosNav.html(newLang === 'es' ? 'Sobre' : 'About');
+    $mediaNav.html(newLang === 'es' ? 'Medios' : 'Media');
+    $patreonNav.html(newLang === 'es' ? 'Contacto' : 'Contact');
+}
 
 function HTMLDualLangTextField(baseDir, element) {
     /*
