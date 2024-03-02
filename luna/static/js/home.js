@@ -14,6 +14,7 @@ $(document).ready(function () {
 
     // load the current langague from the document's 'lang' attribute, which was set by the server (django)
     var currentLang = $('html').attr('lang');
+    console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
 });
 
