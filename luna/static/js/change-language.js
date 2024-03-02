@@ -16,6 +16,7 @@ function toggleLanguage() {
 
     console.log(`Language changed from ${oldLang} to ${currentLang}`)
 
+    /* TODO: will implement in the future
     // save the user's current language on the server (cookie)
     let setLangXHR = new XMLHttpRequest();
     setLangXHR.onload = function () {
@@ -27,6 +28,7 @@ function toggleLanguage() {
     }
     setLangXHR.open('POST', `https://trioluna.com/api/set-language?language=${currentLang}`, true);
     setLangXHR.send(null);
+    */
 
     document.documentElement.lang = currentLang; // update the page's lang attribute
     loadContentInLang(currentLang);
