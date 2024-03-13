@@ -26,4 +26,5 @@ urlpatterns = [
     path("gallery/", views.gallery, name="gallery"),
     path("contact/", views.contact, name="contact"),
     path("api/set-language/", api.set_language, name="set_language_endpoint"),
+    path("api/send-email/", api.email, name="send_email_endpoint"),
 ]

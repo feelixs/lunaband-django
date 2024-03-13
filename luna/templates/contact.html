@@ -43,18 +43,18 @@
             <div class="flex-container">
                 <p id="contact-desc">Got a question or just want to say hi? We'd love to hear from you!</p>
             </div>
-                <form action="https://formspree.io/f/mnqevjdk" method="POST">
+                <form id="send_email_form" method="POST">
                     <label>
                         <span class="flex-container-start margin-left-small" id="contact-email-header">Your email:</span>
                         <span class="flex-container">
-                            <input type="email" name="email">
+                            <input id="email_input" type="email" name="email">
                         </span>
                     </label>
                     <span class="blank-space"></span>
                     <label>
                         <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
                         <span class="flex-container">
-                            <textarea name="message"></textarea>
+                            <textarea id="message_input" name="message"></textarea>
                         </span>
                     </label><br>
                     <div class="flex-container">
