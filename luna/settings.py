@@ -14,7 +14,7 @@ from pathlib import Path
 from os import getenv, path
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
@@ -91,7 +91,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-          'options': f'-c search_path={getenv("DB_SCHEMA")}'
+          'options': f'-c search_path=fxschema'
         },
         'NAME': 'lunadb',
         'USER': 'fxdb',

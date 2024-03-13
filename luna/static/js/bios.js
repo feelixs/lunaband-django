@@ -5,13 +5,17 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    biosTextFields.push(new XMLDualLangTextField(`/static/data/text/bios.xml`, 0, $('#carmen-bio')));
-    biosTextFields.push(new XMLDualLangTextField(`/static/data/text/bios.xml`, 1, $('#marco-bio')));
-    biosTextFields.push(new XMLDualLangTextField(`/static/data/text/bios.xml`, 2, $('#nicolas-bio')));
-    biosTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
-    biosTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
+    biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 0, $('#carmen-bio'), '&ensp;&ensp;&ensp;&ensp;'));
+    biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 1, $('#marco-bio'), '&ensp;&ensp;&ensp;&ensp;'));
+    biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 2, $('#nicolas-bio'), '&ensp;&ensp;&ensp;&ensp;'));
+    biosTextFields.push(new HTMLDualLangTextField(`/static/data/html/footer`, $('#footer-text')));
+    biosTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
     bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+
+    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
+    var currentLang = $('html').attr('lang');
+    console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
 });
 
@@ -22,13 +26,14 @@ function applyMainLanguageChange(newlang) {
     document.title = newlang === 'es' ? 'Luna | Sobre' : 'Luna | About';
     var $biosTitle = $('#page-title');
     $biosTitle.html(newlang === 'es' ? 'Conoce al Trío' : 'Meet the Trio');
-    loadContentInLang(newlang);
 }
 
 function loadContentInLang(language) {
     /*
         This is run when the page initially loads, and whenever the language is changed.
     */
+    applyMainLanguageChange(language);
+    applyNavLanguageChange(language);
     for (let i = 0; i < biosTextFields.length; i++) {
         biosTextFields[i].getText(language);
     }

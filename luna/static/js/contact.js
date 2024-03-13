@@ -5,13 +5,15 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    cntTextFields.push(new DualLangTextField(`/static/text/home/div1`, $('#div1-text')));
-    cntTextFields.push(new DualLangTextField(`/static/text/home/div2`, $('#div2-text')));
-    cntTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
-    cntTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
-    cntTextFields.push(new DualLangTextField( `/static/text/contact/desc`, $('#contact-desc')));
+    cntTextFields.push(new XMLDualLangTextField(`/static/data/xml/contact.xml`, 0, $('#contact-desc')));
+    cntTextFields.push(new HTMLDualLangTextField(`/static/data/html/footer`, $('#footer-text')));
+    cntTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
     cntDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+
+    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
+    var currentLang = $('html').attr('lang');
+    console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
 })
 
@@ -28,13 +30,14 @@ function applyMainLanguageChange(newlang) {
     $contactTitle.html(newlang === 'es' ? 'Contacto' : 'Contact Us');
     $emailTitle.html(newlang === 'es' ? 'Tu correo electrónico:' : 'Your Email:');
     $msgTitle.html(newlang === 'es' ? 'Tu Mensaje:' : 'Your Message:');
-    loadContentInLang(newlang)
 }
 
 function loadContentInLang(language) {
     /*
         This is run when the page initially loads, and whenever the language is changed.
     */
+    applyMainLanguageChange(language);
+    applyNavLanguageChange(language);
     for (let i = 0; i < cntTextFields.length; i++) {
         cntTextFields[i].getText(language);
     }

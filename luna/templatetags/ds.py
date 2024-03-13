@@ -4,7 +4,7 @@ import os
 register = template.Library()
 
 @register.simple_tag
-def cache_buster(static_file):
+def ds(static_file):  # dynamic static - it's cache_buster
     """Appends the edit timestamp to the static file so the browser always refreshes its cache when the file's been edited"""
     full_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "luna/static", static_file)
     url_path = f"/static/{static_file}"

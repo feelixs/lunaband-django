@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from luna import views
+from luna.endpoints import api
 
 urlpatterns = [
     #path("admin/", admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path("bios/", views.bios, name="bios"),
     path("gallery/", views.gallery, name="gallery"),
     path("contact/", views.contact, name="contact"),
+    path("api/set-language/", api.set_language, name="set_language_endpoint"),
 ]

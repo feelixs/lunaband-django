@@ -5,14 +5,18 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    galTextFields.push(new DualLangTextField(`/static/text/footer`, $('#footer-text')));
-    galTextFields.push(new DualLangTextField( `/static/text/copyright`, $('#copyright')));
+    galTextFields.push(new HTMLDualLangTextField(`/static/data/html/footer`, $('#footer-text')));
+    galTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
     /* when we fetch the text from the server, we need a fullpath that included 'luna'.
      when we set the image div in a duallangimage, we don't need 'luna' */
     galDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+
+    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
+    var currentLang = $('html').attr('lang');
+    console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
-    loadGallery();
+    loadGallery("https://trioluna.com/static/data/json/gallery.json");
 })
 
 function applyMainLanguageChange(newlang) {
@@ -22,13 +26,15 @@ function applyMainLanguageChange(newlang) {
     var $galleryTitle = $('#page-title');
     document.title = newlang === 'es' ? 'Luna | Medios' : 'Luna | Media';
     $galleryTitle.html(newlang === 'es' ? 'Galería' : 'Gallery');
-    loadContentInLang(newlang)
 }
 
 function loadContentInLang(language) {
     /*
         This is run when the page initially loads, and whenever the language is changed.
     */
+    applyMainLanguageChange(language);
+    applyNavLanguageChange(language);
+
     for (let i = 0; i < galTextFields.length; i++) {
         galTextFields[i].getText(language);
     }
@@ -37,39 +43,27 @@ function loadContentInLang(language) {
     }
 }
 
-function loadGallery() {
+function loadGallery(jsonFile) {
+    /*
+        Loads pictures with paths provided by `jsonFile` into the page's main gallery
+     */
     $('#gallery-placeholder').remove(); // remove the placeholder "loading gallery" text
 
-    var pictures = [ '068A62F9.webp', 'P1001442.webp',  '468D91AF.webp', 'P1001211.webp',
-                             'P1001437.webp', 'P1001384.webp', 'P1001197.webp', 'P1001430.webp',
-                             'P1001262.webp', 'P1001396.webp', 'P1001427.webp', 'P1001195.webp',
-                             'P1000427.webp', 'P1000708.webp', 'P1001406.webp', 'P1001446.webp' ]
-
-    var $galleryDiv = $('#main-gallery-container');
-    pictures.forEach(function (picFilename) {
-        let $tempDiv = $('<div>').attr('class', 'gallery-container');
-        let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `https://trioluna.com/static/images/gallery/imgs/${picFilename}`);
-        $tempDiv.append($tempImg);
-        $galleryDiv.append($tempDiv);
-        setAltToFile($tempImg, `${trimFilename(picFilename)}.txt`);
-    })
-}
-
-function trimFilename(filename) {
-    // https://stackoverflow.com/a/2187293
-    return filename.substring(0, filename.lastIndexOf('.'));
-}
-
-function setAltToFile(img, filename) {
-    fetch(`https://trioluna.com/static/images/gallery/alts/${filename}`) // fetch file from the server
-        .then((res) => {
-            if (!res.ok) { // if response was not successful
-                img.attr('alt', "undefined");
-                throw new Error(`/luna/images/gallery/alts/${filename} - error fetching file`);
-            }
-            return res.text();
-        })
-        .then((text) => { // set it from the respone's return
-            img.attr('alt', text)
-        });
+    var galleryXHR = new XMLHttpRequest();
+    galleryXHR.onload = function () {
+        var $galleryDiv = $('#main-gallery-container');
+        if (galleryXHR.status === 200) {
+            let jsonContents = JSON.parse(galleryXHR.responseText);
+            jsonContents.pictures.forEach( function(thisPic) {
+                // thisPic is the current index of jsonContents (the current picture from the list in the json)
+                let $tempDiv = $('<div>').attr('class', 'gallery-container');
+                let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', thisPic.url);
+                $tempImg.attr('alt', thisPic.alt);
+                $tempDiv.append($tempImg);
+                $galleryDiv.append($tempDiv);
+            });
+        }
+    }
+    galleryXHR.open('GET', jsonFile, true);
+    galleryXHR.send(null);
 }
