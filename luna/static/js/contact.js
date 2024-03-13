@@ -5,8 +5,6 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    $('#send_email_form').on('submit', send_email);
-
     cntTextFields.push(new XMLDualLangTextField(`/static/data/xml/contact.xml`, 0, $('#contact-desc')));
     cntTextFields.push(new HTMLDualLangTextField(`/static/data/html/footer`, $('#footer-text')));
     cntTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
@@ -46,34 +44,4 @@ function loadContentInLang(language) {
     for (let i = 0; i < cntDualImages.length; i++) {
         cntDualImages[i].getImg(language);
     }
-}
-
-function send_email(event) {
-    event.preventDefault();
-
-    let from = $('#email_input').val();
-    let message = $('#message_input').val();
-
-    console.log(from, message);
-    $.ajax({
-        url: 'https://trioluna.com/api/send-email/',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify({
-            from: from,
-            to: "help.felixcreations@gmail.com",
-            message: message,
-            subject: "test!",
-        }),
-        headers: {
-            'Authorization': '1234' // TODO update
-        },
-        success: function(response) {
-            console.log('Email sent successfully:', response);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error sending email:', error);
-            alert('Failed to send email.');
-        }
-    });
 }
