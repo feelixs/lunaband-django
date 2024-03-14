@@ -1,6 +1,9 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
+import os
 
+
+CLIENT_SECRET = os.getenv('GOOGLE_CLIENT_SECRET_PATH')
 
 async def send_email(me: str, to: str, subject: str, message: str):
     msg = MIMEMultipart()
