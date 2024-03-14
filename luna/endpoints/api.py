@@ -25,6 +25,11 @@ async def set_language(request):
 @async_to_sync
 async def email(request):
     # endpoint to send an email to our client from the user thru "contact us" page
+    email_from = None
+    to = None
+    subject = None
+    msg = None
+
     authorization_header = request.headers.get("Authorization")
     if authorization_header != f"1234": # TODO replace this with better passwd
         return JsonResponse({'success': False, 'msg': 'Forbidden', 'status_code': 403})
@@ -35,4 +40,4 @@ async def email(request):
         msg = request.POST.get('message')
         await tools.send_email(sender=email_from, to=to, subject=subject, message_text=msg)
     except:
-        return JsonResponse({'success': False, 'msg': traceback.format_exc(), 'status_code': 403})
+        return JsonResponse({'success': False,  'values': [email_from, to, subject, msg], 'msg': traceback.format_exc(), 'status_code': 403})
