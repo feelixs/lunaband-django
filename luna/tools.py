@@ -37,7 +37,7 @@ def create_message(sender, to, subject, message_text):
   message['subject'] = subject
   return {'raw': base64.urlsafe_b64encode(message.as_string().encode()).decode()}
 
-def send_message(sender,to,subject,message_text,user_id='me'):
+def send_email(sender,to,subject,message_text,user_id='me'):
   msg = create_message(sender,to,subject,message_text)
   try:
     service = get_google_auth()
@@ -50,4 +50,4 @@ def send_message(sender,to,subject,message_text,user_id='me'):
 
 
 if __name__ == "__main__":
-    send_message("user@example.com","user@example.com","test","this is a tesst",user_id='me')
+    send_email("user@example.com","user@example.com","test","this is a tesst",user_id='me')
