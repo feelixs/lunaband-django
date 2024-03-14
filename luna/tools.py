@@ -1,20 +1,52 @@
-import smtplib
-from email.mime.multipart import MIMEMultipart
 import os
+from email.mime.text import MIMEText
+import base64
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
 
 
-CLIENT_SECRET = os.getenv('GOOGLE_CLIENT_SECRET_PATH')
+SECRET_FILE = os.getenv('GOOGLE_CLIENT_SECRET_PATH')
 
-async def send_email(me: str, to: str, subject: str, message: str):
-    msg = MIMEMultipart()
-    msg['Subject'] = subject
-    # me == the sender's email address
-    # family = the list of all recipients' email addresses
-    msg['From'] = me
-    msg['To'] = to
-    msg.preamble = message
 
-    # Send the email via our own SMTP server.
-    s = smtplib.SMTP('localhost')
-    s.sendmail(me, to, msg.as_string())
-    s.quit()
+def get_google_auth(service="gmail", ver="v1", scopes=None):
+    if scopes is None:
+        scopes = ['https://www.googleapis.com/auth/gmail.readonly',
+                  'https://www.googleapis.com/auth/gmail.send']
+    creds = None
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', scopes)
+    # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(SECRET_FILE, scopes)
+            creds = flow.run_local_server(port=8080)
+        # Save the credentials for the next run
+    with open('token.json', 'w') as token:
+        token.write(creds.to_json())
+    return build(service, ver, credentials=creds)
+
+
+def create_message(sender, to, subject, message_text):
+  message = MIMEText(message_text)
+  message['to'] = to
+  message['from'] = sender
+  message['subject'] = subject
+  return {'raw': base64.urlsafe_b64encode(message.as_string().encode()).decode()}
+
+def send_message(sender,to,subject,message_text,user_id='me'):
+  msg = create_message(sender,to,subject,message_text)
+  try:
+    service = get_google_auth()
+    message = (service.users().messages().send(userId=user_id, body=msg)
+               .execute())
+    print('Message Id: %s' % message['id'])
+    return message
+  except ValueError as e:
+    print('An error occurred: %s' % e)
+
+
+send_message("user@example.com","user@example.com","test","this is a tesst",user_id='me')
