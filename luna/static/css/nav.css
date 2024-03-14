@@ -8,6 +8,12 @@
         padding: 8px;
         z-index: 1;
     }
+
+    .nav-links {
+    list-style: none;
+    display: block;
+    gap: 2rem;
+}
 }
 
 .navbar {
