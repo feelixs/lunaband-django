@@ -32,4 +32,4 @@ async def email(request):
     to = data.get('to')
     subject = data.get('subject')
     msg = data.get('message')
-    await tools.send_email(me=email_from, to=to, subject=subject, message=msg)
+    await tools.send_email(sender=email_from, to=to, subject=subject, message_text=msg)
