@@ -49,4 +49,5 @@ def send_message(sender,to,subject,message_text,user_id='me'):
     print('An error occurred: %s' % e)
 
 
-send_message("user@example.com","user@example.com","test","this is a tesst",user_id='me')
+if __name__ == "__main__":
+    send_message("user@example.com","user@example.com","test","this is a tesst",user_id='me')
