@@ -59,12 +59,12 @@ function send_email(event) {
         url: 'https://trioluna.com/api/send-email/',
         type: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify({
+        data: {
             from: from,
             to: "help.felixcreations@gmail.com",
             message: message,
             subject: "test!",
-        }),
+        },
         headers: {
             'Authorization': '1234' // TODO update
         },
