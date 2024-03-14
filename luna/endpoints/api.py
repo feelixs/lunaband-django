@@ -1,3 +1,4 @@
+import traceback
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from luna import views, tools
@@ -27,9 +28,12 @@ async def email(request):
     authorization_header = request.headers.get("Authorization")
     if authorization_header != f"1234": # TODO replace this with better passwd
         return JsonResponse({'success': False, 'msg': 'Forbidden', 'status_code': 403})
-    data = await request.json()
-    email_from = data.get('from')
-    to = data.get('to')
-    subject = data.get('subject')
-    msg = data.get('message')
-    await tools.send_email(sender=email_from, to=to, subject=subject, message_text=msg)
+    try:
+        data = await request.json()
+        email_from = data.get('from')
+        to = data.get('to')
+        subject = data.get('subject')
+        msg = data.get('message')
+        await tools.send_email(sender=email_from, to=to, subject=subject, message_text=msg)
+    except:
+        return JsonResponse({'success': False, 'msg': traceback.format_exc(), 'status_code': 403})
