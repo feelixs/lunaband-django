@@ -56,15 +56,14 @@ function send_email(event) {
 
     console.log(from, message);
     $.ajax({
-        url: 'https://trioluna.com/api/send-email/',
         type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify({
+        url: 'https://trioluna.com/api/send-email/',
+        data: {
             from: from,
             to: "help.felixcreations@gmail.com",
             message: message,
             subject: "test!",
-        }),
+        },
         headers: {
             'Authorization': '1234' // TODO update
         },
