@@ -32,6 +32,7 @@ html, body {
 
 .social-links-container {
     display: flex;
+    justify-content: center;
 }
 
 .social-link {
