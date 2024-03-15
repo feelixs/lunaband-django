@@ -130,8 +130,12 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 800px) {
     .only-desktop {
         display: none;
+    }
+
+    #page-title {
+        padding-top: 20px;
     }
 }
