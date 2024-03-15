@@ -97,20 +97,10 @@
     }
 }
 
-.social-links-container {
-    display: flex;
-    padding-left: 25vw;
-}
-
 @media (min-width: 1200px) {
     .info-contained-box img {
         height: 70vh;
         width: auto;
-    }
-
-    .social-links-container {
-        display: block;
-        padding-left: 0;
     }
 }
 
