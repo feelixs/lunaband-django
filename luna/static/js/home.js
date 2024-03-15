@@ -23,7 +23,7 @@ function loadPatreonButton() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status === 200) {
-            let client_id = xhr.responseText;
+            let client_id = JSON.parse(xhr.responseText).data;
             let redirect_uri = "&redirect_uri=https://trioluna.com/gracias";
             let v2Params = "&scope=identity%20identity[email]";
             let url = `https://www.patreon.com/oauth2/become-patron?response_type=code$&min_cents=500&client_id=${client_id}${redirect_uri}${v2Params}`
