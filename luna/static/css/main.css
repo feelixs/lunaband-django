@@ -11,6 +11,10 @@ html, body {
     height: 100%;
 }
 
+.center-text {
+    text-align: center;
+}
+
 .padding-20 {
     padding: 20px;
 }
