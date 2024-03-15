@@ -35,5 +35,5 @@
 }
 
 .patreon-subscribe-button:hover {
-    filter: opacity(50%);
+    transform: translateY(-2px);
 }
