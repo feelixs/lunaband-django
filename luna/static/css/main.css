@@ -34,10 +34,6 @@ html, body {
     margin: 100px;
 }
 
-.social-links {
-    display: flex;
-}
-
 @media (max-width: 800px) {
     .videoWrapper {
         position: relative;
@@ -45,10 +41,6 @@ html, body {
         padding-top: 25px;
         height: 0;
         margin: 10px;
-    }
-
-    .social-links {
-        display: block;
     }
 }
 
