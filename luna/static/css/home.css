@@ -33,3 +33,7 @@
     font-weight: bold;
     transition: all 0.3s ease;
 }
+
+.patreon-subscribe-button:hover {
+    filter: opacity(50%);
+}

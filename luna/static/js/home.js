@@ -17,17 +17,6 @@ $(document).ready(function () {
     console.log(`Loading the user's current language as ${currentLang}`);
 
     loadPatreonButton();
-
-    $("#patreon-subscribe-btn").on('mouseenter', function () {
-        let i = 168;
-        const btn = $(this);
-        const interval = setInterval(function() {
-            btn.css('background-image', `linear-gradient(${i}deg, #ff424d, #ffab00)`);
-            i++;
-            if (i > 190) clearInterval(interval); // stop at 190 deg
-        }, 100);
-    });
-
     loadContentInLang(currentLang);
 });
 
