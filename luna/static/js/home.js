@@ -23,13 +23,14 @@ function loadPatreonButton() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status === 200) {
-            let client_id = JSON.parse(xhr.responseText).data;
+            let client_id = JSON.parse(xhr.responseText).data; // response should be {'data': client_id}
             let redirect_uri = "&redirect_uri=https://trioluna.com/gracias";
             let v2Params = "&scope=identity%20identity[email]";
             let url = `https://www.patreon.com/oauth2/become-patron?response_type=code$&min_cents=500&client_id=${client_id}${redirect_uri}${v2Params}`
             $('#patreon-button').html(`<a className="patreon-button link-button" data-patreon-widget-type="become-patron-button" href="${url}" rel="noreferrer" target="_blank">Become a Patron</a>`)
         }
     }
+    // retrieve my patreon API client id (stored on trioluna's server)
     xhr.open('GET', "https://trioluna.com/api/get/patreon-client/", true);
     xhr.send(null);
 }
