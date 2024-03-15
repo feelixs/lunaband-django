@@ -25,7 +25,7 @@ urlpatterns = [
     path("bios/", views.bios, name="bios"),
     path("gallery/", views.gallery, name="gallery"),
     path("contact/", views.contact, name="contact"),
-    
+
     path("gracias/", views.index, name="thank-you"), # redirected to after subscribing through the custom patreon subscribe button
     path("api/set-language/", api.set_language, name="set_language_endpoint"),
 ]
