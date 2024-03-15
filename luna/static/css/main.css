@@ -31,8 +31,7 @@ html, body {
 }
 
 .social-link {
-    padding-left: 25vw;
-    padding-top: 60px;
+    padding: 10vw;
 }
 
 .videoWrapper {
@@ -57,7 +56,7 @@ html, body {
     }
 
     .social-link {
-        padding-left: 0;
+        padding: 0;
     }
 }
 
