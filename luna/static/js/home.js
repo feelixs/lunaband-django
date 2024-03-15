@@ -20,6 +20,8 @@ $(document).ready(function () {
 });
 
 function loadPatreonButton() {
+    // the default patreon button (precoded into the html) links to trioluna's patreon page
+    // this function loads a new button which links directly to the patreon "subscribe" flow (we need a patreon API client to create this button)
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status === 200) {
