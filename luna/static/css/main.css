@@ -11,6 +11,10 @@ html, body {
     height: 100%;
 }
 
+footer {
+    color: white;
+}
+
 .center-text {
     text-align: center;
 }
