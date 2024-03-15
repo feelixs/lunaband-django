@@ -3,10 +3,6 @@ from django.views.decorators.http import require_http_methods
 from luna import views
 from django.views.decorators.csrf import csrf_exempt
 from asgiref.sync import sync_to_async, async_to_sync
-import os
-
-
-PATREON_CLIENT_ID = os.getenv('PATREON_CLIENT_ID')
 
 
 @require_http_methods(["POST"])
@@ -22,10 +18,3 @@ async def set_language(request):
         return JsonResponse({'error': 'Language parameter is missing'}, status=400)
     await views.set_language(request, language)
     return JsonResponse({'message': 'Language set successfully'}, status=200)
-
-
-@sync_to_async
-@csrf_exempt
-@async_to_sync
-async def get_patreon_client(request):
-    return JsonResponse({'data': PATREON_CLIENT_ID}, status=200)

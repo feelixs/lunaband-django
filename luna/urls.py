@@ -26,7 +26,10 @@ urlpatterns = [
     path("gallery/", views.gallery, name="gallery"),
     path("contact/", views.contact, name="contact"),
 
-    path("gracias/", views.index, name="thank-you"), # redirected to after subscribing through the custom patreon subscribe button
+    # todo implement saving user default languages as cookie
     path("api/set-language/", api.set_language, name="set_language_endpoint"),
-    path("api/get/patreon-client/", api.get_patreon_client, name="get_patreon_client"),
+
+    # todo replace with thank you page
+    path("gracias/", views.index, name="thank-you"), # redirected to after subscribing through the custom patreon subscribe button
+
 ]

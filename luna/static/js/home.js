@@ -22,19 +22,11 @@ $(document).ready(function () {
 function loadPatreonButton() {
     // the default patreon button (precoded into the html) links to trioluna's patreon page
     // this function loads a new button which links directly to the patreon "subscribe" flow (we need a patreon API client to create this button)
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            let client_id = JSON.parse(xhr.responseText).data; // response should be {'data': client_id}
-            let redirect_uri = "&redirect_uri=https://trioluna.com/gracias";
-            let v2Params = "&scope=identity%20identity[email]";
-            let url = `https://www.patreon.com/oauth2/become-patron?response_type=code$&min_cents=500&client_id=${client_id}${redirect_uri}${v2Params}`
-            $('#patreon-button').html(`<a className="patreon-button link-button" data-patreon-widget-type="become-patron-button" href="${url}" rel="noreferrer">Become a Patron</a>`)
-        }
-    }
-    // retrieve my patreon API client id (stored on trioluna's server)
-    xhr.open('GET', "https://trioluna.com/api/get/patreon-client/", true);
-    xhr.send(null);
+    let client_id = "Lc5QkYNGyZbK-o385xIL_izwf7L9YeDX_7cZmSq5aNBg_W8xS0X2PxDuUu_Cv228";
+    let redirect_uri = "&redirect_uri=https://trioluna.com/gracias";
+    let v2Params = "&scope=identity%20identity[email]";
+    let url = `https://www.patreon.com/oauth2/become-patron?response_type=code$&min_cents=500&client_id=${client_id}${redirect_uri}${v2Params}`
+    $('#patreon-button').html(`<a className="patreon-button link-button" data-patreon-widget-type="become-patron-button" href="${url}" rel="noreferrer">Become a Patron</a>`)
 }
 
 function applyMainLanguageChange(newlang) {

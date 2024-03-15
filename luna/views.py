@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from asgiref.sync import sync_to_async
 from luna.settings import SITE_IP, SITE_HOST, STATIC_ROOT
-from luna import tools
 import os
 
 
@@ -22,7 +21,7 @@ async def get_language(request):
 
 async def index(request):
     language = await get_language(request)
-    return render(request, 'index.html', {'language': language, 'subscribe_button': tools.get_patreon_subscribe_url()})
+    return render(request, 'index.html', {'language': language})
 
 
 async def bios(request):
