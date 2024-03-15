@@ -34,13 +34,21 @@ html, body {
     margin: 100px;
 }
 
-@media (max-width: 1200px) {
+.social-links {
+    display: flex;
+}
+
+@media (max-width: 800px) {
     .videoWrapper {
         position: relative;
         padding-bottom: 56.25%; /* 16:9 */
         padding-top: 25px;
         height: 0;
         margin: 10px;
+    }
+
+    .social-links {
+        display: block;
     }
 }
 
