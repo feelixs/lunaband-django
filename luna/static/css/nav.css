@@ -3,7 +3,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(to right, #ff424d, #ffab00);
+    background: #5d5d5d;
     padding: 8px;
     z-index: 1;
 }
