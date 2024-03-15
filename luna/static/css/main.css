@@ -1,7 +1,7 @@
 /* Installed Fonts */
 @font-face { font-family: Delicious; src: url('../fonts/Rubik_Doodle_Shadow/RubikDoodleShadow-Regular.ttf'); }
 @font-face { font-family: Outfit; src: url('../fonts/Outfit/Outfit-VariableFont_wght.ttf');}
-
+@font-face { font-family: Pridi; src: url('../fonts/Pridi/Pridi-Light.ttf');}
 
 html, body {
     font-family: Outfit, sans-serif;
