@@ -24,17 +24,6 @@
 }
 
 
-
-@keyframes gradientShift {
-    0% {
-        background-image: linear-gradient(168deg, #ff424d, #ffab00);
-    }
-    100% {
-        background-image: linear-gradient(190deg, #e03632, #ff9500);
-    }
-}
-
-
 .patreon-subscribe-button {
     background-image: linear-gradient(168deg, #ff424d, #ffab00);
     color: white;
@@ -43,9 +32,4 @@
     border-radius: 5px;
     font-weight: bold;
     transition: all 0.3s ease;
-    animation: gradientShift 3s ease-in-out infinite alternate;
-}
-
-.patreon-subscribe-button:hover {
-    background-image: linear-gradient(190deg, #e03632, #ff9500);
 }

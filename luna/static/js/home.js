@@ -15,7 +15,19 @@ $(document).ready(function () {
     // load the current langague from the document's 'lang' attribute, which was set by the server (django)
     var currentLang = $('html').attr('lang');
     console.log(`Loading the user's current language as ${currentLang}`);
+
     loadPatreonButton();
+
+    $("#patreon-subscribe-btn").on('mouseenter', function () {
+        let i = 168;
+        const btn = $(this);
+        const interval = setInterval(function() {
+            btn.css('background-image', `linear-gradient(${i}deg, #ff424d, #ffab00)`);
+            i++;
+            if (i > 190) clearInterval(interval); // stop at 190 deg
+        }, 100);
+    });
+
     loadContentInLang(currentLang);
 });
 
@@ -26,7 +38,7 @@ function loadPatreonButton() {
     let redirect_uri = "&redirect_uri=https://trioluna.com/gracias";
     let v2Params = "&scope=identity%20identity[email]";
     let url = `https://www.patreon.com/oauth2/become-patron?response_type=code$&min_cents=500&client_id=${client_id}${redirect_uri}${v2Params}`
-    $('#patreon-button').html(`<a class="patreon-subscribe-button" data-patreon-widget-type="become-patron-button" href="${url}" rel="noreferrer">Become a Patron</a>`)
+    $('#patreon-button').html(`<a id="patreon-subscribe-btn" class="patreon-subscribe-button" data-patreon-widget-type="become-patron-button" href="${url}" rel="noreferrer">Become a Patron</a>`)
 }
 
 function applyMainLanguageChange(newlang) {
