@@ -26,7 +26,7 @@ function loadPatreonButton() {
     let redirect_uri = "&redirect_uri=https://trioluna.com/gracias";
     let v2Params = "&scope=identity%20identity[email]";
     let url = `https://www.patreon.com/oauth2/become-patron?response_type=code$&min_cents=500&client_id=${client_id}${redirect_uri}${v2Params}`
-    $('#patreon-button').html(`<a className="patreon-subscribe-button" data-patreon-widget-type="become-patron-button" href="${url}" rel="noreferrer">Become a Patron</a>`)
+    $('#patreon-button').html(`<a class="patreon-subscribe-button" data-patreon-widget-type="become-patron-button" href="${url}" rel="noreferrer">Become a Patron</a>`)
 }
 
 function applyMainLanguageChange(newlang) {

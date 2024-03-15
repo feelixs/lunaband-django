@@ -30,12 +30,9 @@
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .patreon-subscribe-button:hover {
     background-image: linear-gradient(to right, #e03632, #ff9500);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px); /* make shadow noticable */
 }
