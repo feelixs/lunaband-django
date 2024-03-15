@@ -18,6 +18,21 @@ $(document).ready(function () {
     loadContentInLang(currentLang);
 });
 
+function loadPatreonButton() {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            let client_id = xhr.responseText;
+            let redirect_uri = "&redirect_uri=https://trioluna.com/gracias";
+            let v2Params = "&scope=identity%20identity[email]";
+            let url = `https://www.patreon.com/oauth2/become-patron?response_type=code$&min_cents=500&client_id=${client_id}${redirect_uri}${v2Params}`
+            $('#patreon-button').html(`<a className="patreon-button link-button" data-patreon-widget-type="become-patron-button" href="${url}" rel="noreferrer" target="_blank">Become a Patron</a>`)
+        }
+    }
+    xhr.open('GET', "https://trioluna.com/api/get/patreon-client/", true);
+    xhr.send(null);
+}
+
 function applyMainLanguageChange(newlang) {
     /*
         Applies language change to the page's main text, this will be overriden for each page
