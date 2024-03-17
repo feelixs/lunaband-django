@@ -7,13 +7,13 @@
     transform: translateY(-10vw);
 }
 
-.instagram-social-link {
-    margin-top: 0;
+#instagram-social-link {
+    padding-top: 0;
 }
 
 @media (max-width: 800px) {
-    .instagram-social-link {
-        margin-top: 20px;
+    #instagram-social-link {
+        padding-top: 30px;
     }
 }
 
