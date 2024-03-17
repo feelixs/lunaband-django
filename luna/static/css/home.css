@@ -9,6 +9,10 @@
 
 
 @media (max-width: 1200px) {
+    .instagram-social-link {
+        padding-top: 20px;
+    }
+
     #div1-text {
         font-size: 1.4em;
     }
