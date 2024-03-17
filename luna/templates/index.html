@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="{{ language }}">
 {% load static %}
-{% load ds %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/flex-boxes.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/background.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% ds 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
     <title>Luna | Home</title>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -90,7 +89,7 @@
     </div>
 </footer>
 
-<script src="{% ds 'js/change-language.js' %}"></script>
-<script src="{% ds 'js/home.js' %}"></script>
+<script src="{% static 'js/change-language.js' %}"></script>
+<script src="{% static 'js/home.js' %}"></script>
 </body>
 </html>
