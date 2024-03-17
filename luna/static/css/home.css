@@ -8,7 +8,7 @@
 }
 
 #instagram-social-link {
-    padding-top: 0;
+    padding-top: inherit;
 }
 
 @media (max-width: 800px) {
