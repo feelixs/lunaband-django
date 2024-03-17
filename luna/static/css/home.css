@@ -7,10 +7,6 @@
     transform: translateY(-10vw);
 }
 
-#instagram-social-link {
-    padding-top: inherit;
-}
-
 @media (max-width: 800px) {
     #instagram-social-link {
         padding-top: 30px;
