@@ -42,7 +42,6 @@ div #img3 {
 .text-overlay p.main-subhead {
     color: white;
     font-size: 2em;
-    line-height: 2.5;
 }
 
 @media (max-width: 800px) {
