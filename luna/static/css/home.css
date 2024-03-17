@@ -7,12 +7,17 @@
     transform: translateY(-10vw);
 }
 
+.instagram-social-link {
+    padding-top: 0;
+}
 
-@media (max-width: 1200px) {
+@media (max-width: 800px) {
     .instagram-social-link {
         padding-top: 20px;
     }
+}
 
+@media (max-width: 1200px) {
     #div1-text {
         font-size: 1.4em;
     }
