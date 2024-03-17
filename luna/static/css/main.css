@@ -39,6 +39,10 @@ footer {
     justify-content: center;
 }
 
+.height-14 {
+    line-height: 1.4;
+}
+
 .social-link {
     white-space: nowrap;
     padding: 60px 2vw;
