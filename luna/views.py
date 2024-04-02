@@ -7,8 +7,8 @@ import os
 async def set_language(request, language):
     await sync_to_async(request.session.__setitem__)('language', language)
 
-def handler404(request, exception=None, template_name='errors/404.html'):
-    return render(request, template_name, status=404)
+def handler404(request):
+    return render(request, 'errors/404.html')
 
 def handler500(request):
     return render(request, 'errors/500.html')
