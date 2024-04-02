@@ -10,4 +10,9 @@
         <en>Follow us on our musical journey</en>
         <es>Síguenos en nuestro viaje musical</es>
     </field>
+    <field>
+        <name>Patreon text</name>
+        <en>Support our creative process</en>
+        <es>Apoya nuestro proceso creativo</es>
+    </field>
 </root>
