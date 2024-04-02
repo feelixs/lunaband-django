@@ -20,6 +20,7 @@ from luna import views
 from luna.endpoints import api
 
 handler500 = 'luna.views.handler500'
+handler404 = 'luna.views.handler404'
 
 urlpatterns = [
     #path("admin/", admin.site.urls),
