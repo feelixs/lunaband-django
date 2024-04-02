@@ -19,6 +19,8 @@ from django.urls import path
 from luna import views
 from luna.endpoints import api
 
+handler500 = 'luna.views.handler500'
+
 urlpatterns = [
     #path("admin/", admin.site.urls),
     path("", views.index, name="home"),
