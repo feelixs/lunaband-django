@@ -19,11 +19,19 @@ from django.urls import path
 from luna import views
 from luna.endpoints import api
 
+handler500 = 'luna.views.handler500'
+
 urlpatterns = [
     #path("admin/", admin.site.urls),
     path("", views.index, name="home"),
     path("bios/", views.bios, name="bios"),
     path("gallery/", views.gallery, name="gallery"),
     path("contact/", views.contact, name="contact"),
+
+    # todo implement saving user default languages as cookie
     path("api/set-language/", api.set_language, name="set_language_endpoint"),
+
+    # todo replace with thank you page
+    path("gracias/", views.index, name="thank-you"), # redirected to after subscribing through the custom patreon subscribe button
+
 ]
