@@ -7,11 +7,11 @@ import os
 async def set_language(request, language):
     await sync_to_async(request.session.__setitem__)('language', language)
 
-def handler500(request):
-    return render(request, 'errors/500.html')
-
 def handler404(request):
     return render(request, 'errors/404.html')
+
+def handler500(request):
+    return render(request, 'errors/500.html')
 
 async def get_language(request):
     language = await sync_to_async(request.session.get)('language')  # get language from user data
