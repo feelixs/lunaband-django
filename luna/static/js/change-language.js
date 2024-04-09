@@ -44,7 +44,6 @@ function toggleLanguage() {
         console.log(setLangXHR.responseText);
     }
     setLangXHR.open('POST', `https://trioluna.com/api/set-language/`, true);
-    //setLangXHR.withCredentials = true;
     setLangXHR.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
     setLangXHR.setRequestHeader('Content-Type', 'application/json');
     setLangXHR.send(JSON.stringify({ language: currentLang }));
