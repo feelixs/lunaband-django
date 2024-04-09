@@ -31,7 +31,7 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
 
     # todo implement saving user default languages as cookie
-    path("api/set-language/", api.set_language, name="set_language_endpoint"),
+    path("api/set-language/", api.set_language_api, name="set_language_endpoint"),
 
     # todo replace with thank you page
     path("gracias/", views.index, name="thank-you"), # redirected to after subscribing through the custom patreon subscribe button
