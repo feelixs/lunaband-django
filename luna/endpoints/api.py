@@ -6,9 +6,6 @@ from asgiref.sync import sync_to_async, async_to_sync
 
 
 @require_http_methods(["POST"])
-@sync_to_async
-@csrf_exempt
-@async_to_sync
 async def set_language(request):
     # endpoint to set the user's default language - uses the 'request' object to set the user's session cookie
     # can be called thru javascript
