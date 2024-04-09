@@ -15,12 +15,9 @@ async def set_language_api(request):
 
     # endpoint to set the user's default language - uses the 'request' object to set the user's session cookie
     # can be called thru javascript
-    try:
-        data = json.loads(request.body.decode('utf-8'))
-        language = data.get('language')
-        if not language:
-            return JsonResponse({'error': 'Language parameter is missing'}, status=400)
-        await sync_to_async(set_lang)(request, language)
-        return JsonResponse({'message': 'Language set successfully'}, status=200)
-    except:
-        return JsonResponse({'message': traceback.format_exc()}, status=500)
+    data = json.loads(request.body.decode('utf-8'))
+    language = data.get('language')
+    if not language:
+        return JsonResponse({'error': 'Language parameter is missing'}, status=400)
+    await sync_to_async(set_lang)(request, language)
+    return JsonResponse({'message': 'Language set successfully'}, status=200)
