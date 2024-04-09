@@ -14,7 +14,7 @@ $(document).ready(function () {
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
 
     // load the current langague from the document's 'lang' attribute, which was set by the server (django)
-    var currentLang = $('html').attr('lang');
+    currentLang = $('html').attr('lang');
     console.log(`Loading the user's current language as ${currentLang}`);
 
     loadPatreonButton();
