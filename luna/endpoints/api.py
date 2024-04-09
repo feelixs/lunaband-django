@@ -19,4 +19,4 @@ async def set_language_api(request):
         await sync_to_async(views.set_language)(request, language)
         return JsonResponse({'message': 'Language set successfully'}, status=200)
     except:
-        return JsonResponse({'message': traceback.format_exc()})
+        return JsonResponse({'message': traceback.format_exc()}, status=500)
