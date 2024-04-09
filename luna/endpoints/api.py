@@ -10,14 +10,17 @@ from asgiref.sync import sync_to_async, async_to_sync
 
 @require_http_methods(["POST"])
 async def set_language_api(request):
+    def set_lang(req, lang):
+        req.session['language'] = lang
+
     # endpoint to set the user's default language - uses the 'request' object to set the user's session cookie
     # can be called thru javascript
     try:
-        data = json.loads(request.body)
+        data = await request.json()
         language = data.get('language')
         if not language:
             return JsonResponse({'error': 'Language parameter is missing'}, status=400)
-        await sync_to_async(views.set_language)(request, language)
+        await sync_to_async(set_lang)(request, language)
         return JsonResponse({'message': 'Language set successfully'}, status=200)
     except:
         return JsonResponse({'message': traceback.format_exc()}, status=500)
