@@ -14,7 +14,7 @@ def handler500(request):
     return render(request, 'errors/500.html')
 
 async def get_language(request):
-    return await sync_to_async(request.session.get)('language')  # get language from user data
+    language = await sync_to_async(request.session.get)('language')  # get language from user data
     if language in ['es', 'en']:
         return language
 
