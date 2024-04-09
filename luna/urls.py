@@ -34,6 +34,6 @@ urlpatterns = [
     path("api/set-language/", api.set_language_api, name="set_language_endpoint"),
 
     # todo replace with thank you page
-    path("gracias/", views.index, name="thank-you"), # redirected to after subscribing through the custom patreon subscribe button
+    path("gracias/", views.index, name="thank-you"),  # redirected to after subscribing through the custom patreon subscribe button
 
 ]
