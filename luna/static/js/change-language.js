@@ -40,6 +40,7 @@ function toggleLanguage() {
             console.log(`Cached '${currentLang}' as the user's current language`)
         } else {
             console.log(`Error caching '${currentLang}' as the user's current language`)
+            console.log(setLangXHR.responseText)
         }
     }
     setLangXHR.open('POST', `https://trioluna.com/api/set-language/`, true);
