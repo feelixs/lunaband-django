@@ -13,5 +13,5 @@ async def set_language_api(request):
     language = data.get('language')
     if not language:
         return JsonResponse({'error': 'Language parameter is missing'}, status=400)
-    await views.set_language(request, language)
+    await sync_to_async(views.set_language)(request, language)
     return JsonResponse({'message': 'Language set successfully'}, status=200)
