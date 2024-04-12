@@ -8,7 +8,6 @@ $(document).ready(function () {
     homeTextFields.push(new XMLDualLangTextField(`/static/data/xml/home.xml`, 0, $('#div1-text')));
     homeTextFields.push(new XMLDualLangTextField(`/static/data/xml/home.xml`, 1, $('#div2-text')));
     homeTextFields.push(new XMLDualLangTextField(`/static/data/xml/home.xml`, 2, $('#patreon-text')));
-    homeTextFields.push(new HTMLDualLangTextField(`/static/data/html/footer`, $('#footer-text')));
     homeTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
     homeDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
