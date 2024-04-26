@@ -6,6 +6,10 @@
     text-align: left;
 }
 
+#band-pic {
+    margin-bottom: 50px;
+}
+
 @media (max-width: 1200px) {
     .flex-container-bio {
         display: block;
